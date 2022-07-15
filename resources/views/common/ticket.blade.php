@@ -5,7 +5,7 @@
     <div class="my-ticket padding-bt">
         <div class="osahan-header-nav shadow-sm p-3 d-flex align-items-center bg-danger">
             <h5 class="font-weight-normal mb-0 text-white">
-                <a class="text-danger mr-3" href="home.html"><i class="icofont-rounded-left"></i></a>
+                <a class="text-danger mr-3" href="/home"><i class="icofont-rounded-left"></i></a>
                 Your Bookings
             </h5>
             <div class="ml-auto d-flex align-items-center">
