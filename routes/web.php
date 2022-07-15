@@ -1,8 +1,8 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
-
-
+use App\Http\Controllers\AgentController;
+use App\Http\Controllers\BusController;
 
 // page ya kwanza ku load system ikifunguka
 Route::get('/', function () {
@@ -83,3 +83,9 @@ Route::get('/agents_list', function () {
 Route::get('/bookings', function () {
     return view('admin.bookings');
 });
+
+// Adding new Agent here
+Route::post('/new_agent',[AgentController::class,'addNewAgent']);
+
+// Add new Bus Here
+Route::post('/new_bus',[BusController::class,'addNewBus']);
