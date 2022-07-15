@@ -53,3 +53,33 @@ Route::get('/checkout', function () {
 Route::get('/login', function () {
     return view('outside.login');
 });
+
+// admin dashboard route here
+Route::get('/admin_dashboard', function () {
+    return view('admin.dashboard');
+});
+
+// Add new Bus here
+Route::get('/add_bus', function () {
+    return view('admin.add_bus');
+});
+
+// Add new Agent
+Route::get('/add_agent', function () {
+    return view('admin.add_agent');
+});
+
+// Busses List here
+Route::get('/bus_list', function () {
+    return view('admin.bus_list');
+});
+
+// List of Agents Here
+Route::get('/agents_list', function () {
+    return view('admin.agents_list');
+});
+
+// All Bookings here
+Route::get('/bookings', function () {
+    return view('admin.bookings');
+});
