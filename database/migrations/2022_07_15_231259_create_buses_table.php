@@ -18,7 +18,7 @@ return new class extends Migration
             $table->string('bus')->unique();
             $table->string('region_from');
             $table->string('region_to');
-            $table->string('price');
+            $table->bigInteger('price');
             $table->string('wifi');
             $table->string('AC');
             $table->string('food');
