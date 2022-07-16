@@ -23,13 +23,9 @@
     <link href="{{ asset('vendor/sidebar/demo.css') }}" rel="stylesheet">
 </head>
 
-<body class="bg-light">
+<body class="{{request()->is('home') ? 'bg-danger':'bg-light'}}">
 
     @yield('pages')
-    
-    @if (!request()->is('single_bus') && !request()->is('select_seat') && !request()->is('payment') && !request()->is('checkout') && !request()->is('your_ticket') )
-        @include('components.bottom_nav')
-    @endif
 
     @include('components.main_nav')
 

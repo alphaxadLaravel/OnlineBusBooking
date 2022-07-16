@@ -6,7 +6,7 @@
 <div class="payment padding-bt">
     <div class="osahan-header-nav shadow-sm p-3 d-flex align-items-center bg-danger">
         <h5 class="font-weight-normal mb-0 text-white">
-            <a class="text-danger mr-3" href="select-seat.html"><i class="icofont-rounded-left"></i></a>
+            <a class="text-danger mr-3" href="/select_seat"><i class="icofont-rounded-left"></i></a>
             Payment
         </h5>
         <div class="ml-auto d-flex align-items-center">
@@ -60,7 +60,7 @@
                     <p class="small mb-0 ml-auto l-hght-14"> C1</p>
                 </div>
                 <div class="l-hght-10 d-flex align-items-center mt-3">
-                    <p class="mb-0 pr-1 font-weight-bold">Amount Paid</p>
+                    <p class="mb-0 pr-1 font-weight-bold">Amount To Be Paid</p>
                     <p class="mb-0 ml-auto l-hght-14 text-danger font-weight-bold">Tsh. 30000</p>
                 </div>
             </div>

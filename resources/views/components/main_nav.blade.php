@@ -6,7 +6,6 @@
                 <div class="text-white">
                     <h6 class="mb-0">I Am Osahan</h6>
                     <small>+91 12345-67890</small><br>
-                    <span class="f-10 text-white-50">Version 1.32</span>
                 </div>
             </a>
         </li>

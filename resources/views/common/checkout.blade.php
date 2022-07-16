@@ -6,7 +6,7 @@
 <div class="payment padding-bt">
     <div class="osahan-header-nav shadow-sm p-3 d-flex align-items-center bg-danger">
         <h5 class="font-weight-normal mb-0 text-white">
-            <a class="text-danger mr-3" href="payment.html"><i class="icofont-rounded-left"></i></a>
+            <a class="text-danger mr-3" href="/payment"><i class="icofont-rounded-left"></i></a>
             Payment
         </h5>
         <div class="ml-auto d-flex align-items-center">

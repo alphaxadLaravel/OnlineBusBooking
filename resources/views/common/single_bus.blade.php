@@ -20,12 +20,7 @@
             <div class="w-100">
                 <h6 class="my-1 l-hght-18 font-weight-bold">Abood Bus</h6>
                 <div class="start-rating f-10">
-                    <i class="icofont-star text-danger"></i>
-                    <i class="icofont-star text-danger"></i>
-                    <i class="icofont-star text-danger"></i>
-                    <i class="icofont-star text-danger"></i>
-                    <i class="icofont-star text-muted"></i>
-                    <span class="text-dark">4.0</span>
+                    
                     <div class="d-flex mt-2">
                         <p class="m-0"><i class="icofont-google-map mr-1 text-danger"></i><span class="small">Dar es
                                 Salaam - Tanga</span></p>
@@ -67,14 +62,7 @@
             </div>
         </div>
     </div>
-    <ul class="nav nav-pills mb-0 nav-justified bg-white px-3 py-2 border-top border-bottom" id="pills-tab"
-        role="tablist">
-        <li class="nav-item" role="presentation">
-            <a class="nav-link active" id="pills-home-tab" data-toggle="pill" href="#pills-home" role="tab"
-                aria-controls="pills-home" aria-selected="true"><i class="icofont-info-circle"></i> Info</a>
-        </li>
-
-    </ul>
+    
     <div class="tab-content" id="pills-tabContent">
         <div class="tab-pane fade show active" id="pills-home" role="tabpanel" aria-labelledby="pills-home-tab">
             <div class="bus-details pt-3 pb-0 px-3">
