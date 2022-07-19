@@ -84,6 +84,26 @@ Route::get('/bookings', function () {
     return view('admin.bookings');
 });
 
+// Add new Company here
+Route::get('/add_company', function () {
+    return view('admin.add_company');
+});
+
+// Route to transactions made
+Route::get('/transactions', function () {
+    return view('admin.transactions');
+});
+
+// New bus route
+Route::get('/bus_route', function () {
+    return view('admin.add_routes');
+});
+
+// Invoices routes here
+Route::get('/invoices', function () {
+    return view('admin.invoices');
+});
+
 // Adding new Agent here
 Route::post('/new_agent',[AgentController::class,'addNewAgent']);
 

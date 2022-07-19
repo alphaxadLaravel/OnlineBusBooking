@@ -13,16 +13,15 @@
                         <div class="col">
                             <div class="card shadow mb-3">
                                 <div class="card-header py-3">
-                                    <p class="text-primary m-0 font-weight-bold">Agent Credentials</p>
+                                    <p class="text-primary m-0 font-weight-bold">Agent Details</p>
                                 </div>
                                 <div class="card-body">
                                     <div class="form-row">
                                         <div class="col">
-                                            <div class="form-group"><label for="username"><strong>Agent
-                                                        Fullnamee</strong><br></label><input class="form-control"
-                                                    type="text" placeholder="Enter Agent Fullname" name="agent">
+                                            <div class="form-group"><label for="username"><strong>Agent Fullname</strong><br></label><input class="form-control"
+                                                    type="text" placeholder="Enter agent Fullname" name="username">
                                                 <small class="text-danger">
-                                                    @error('agent')
+                                                    @error('username')
                                                         {{ $message }}
                                                     @enderror
                                                 </small>
@@ -30,9 +29,22 @@
 
                                         </div>
                                         <div class="col">
-                                            <div class="form-group"><label for="email"><strong>Agent Phone
-                                                        Number</strong></label><input class="form-control" type="number"
-                                                    placeholder="Enter Agent Phone e.g 07.." name="phone">
+                                            <div class="form-group"><label for="username"><strong>Agent Username</strong><br></label><input class="form-control"
+                                                    type="text" placeholder="Enter agent Username" name="username">
+                                                <small class="text-danger">
+                                                    @error('username')
+                                                        {{ $message }}
+                                                    @enderror
+                                                </small>
+                                            </div>
+
+                                        </div>
+                                       
+                                    </div>
+                                    <div class="form-row">
+                                        <div class="col">
+                                            <div class="form-group"><label for="email"><strong>Agent Phone</strong></label><input class="form-control" type="number"
+                                                    placeholder="Enter agent Phone e.g 07.." name="phone">
                                                     <small class="text-danger">
                                                         @error('phone')
                                                             {{ $message }}
@@ -40,12 +52,9 @@
                                                     </small>
                                                 </div>
                                         </div>
-                                    </div>
-                                    <div class="form-row">
                                         <div class="col">
-                                            <div class="form-group"><label for="username"><strong>Agent
-                                                        Email</strong><br></label><input class="form-control" type="email"
-                                                    placeholder="Enter Agent Email" name="email">
+                                            <div class="form-group"><label for="username"><strong>Agent Email</strong><br></label><input class="form-control" type="email"
+                                                    placeholder="Enter agent Email" name="email">
                                                     <small class="text-danger">
                                                         @error('email')
                                                             {{ $message }}
@@ -53,20 +62,8 @@
                                                     </small>
                                                 </div>
                                         </div>
-                                        <div class="col">
-                                            <div class="form-group"><label for="email"><strong>Agent
-                                                        Password</strong></label><input class="form-control" type="password"
-                                                    placeholder="Enter Agent Password" name="password">
-                                                    <small class="text-danger">
-                                                        @error('password')
-                                                            {{ $message }}
-                                                        @enderror
-                                                    </small>
-                                                </div>
-                                        </div>
                                     </div>
-                                    <div class="form-group"><button class="btn btn-primary btn-sm" type="submit">Submit
-                                            Agent Details</button></div>
+                                    <div class="form-group"><button class="btn btn-primary btn-sm" type="submit">Submit Agent Details</button></div>
                                 </div>
                             </div>
                         </div>

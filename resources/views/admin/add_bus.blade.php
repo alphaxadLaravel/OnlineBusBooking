@@ -41,46 +41,6 @@
                                                 </div>
                                         </div>
                                     </div>
-                                    <div class="form-row">
-                                        <div class="col">
-                                            <div class="form-group"><label for="first_name"><strong>Region
-                                                        From</strong></label>
-                                                <select class="form-control" name="region_from" id="">
-                                                    <option value="">Select Region From..</option>
-                                                    <option value="Dar">dar-es-Salaam</option>
-                                                    <option value="mwanza">Mwanza</option>
-                                                    <option value="kigoma">Kigoma</option>
-                                                    <option value="mbeya">Mbeya</option>
-                                                    <option value="Arusha">Arusha</option>
-                                                    <option value="Dodoma">Dodoma</option>
-                                                </select>
-                                                <small class="text-danger">
-                                                    @error('region_from')
-                                                        {{ $message }}
-                                                    @enderror
-                                                </small>
-                                            </div>
-                                        </div>
-                                        <div class="col">
-                                            <div class="form-group"><label for="last_name"><strong>Region
-                                                        To</strong></label>
-                                                <select class="form-control" name="region_to" id="">
-                                                    <option value="">Select Region To..</option>
-                                                    <option value="Dar">dar-es-Salaam</option>
-                                                    <option value="mwanza">Mwanza</option>
-                                                    <option value="kigoma">Kigoma</option>
-                                                    <option value="mbeya">Mbeya</option>
-                                                    <option value="Arusha">Arusha</option>
-                                                    <option value="Dodoma">Dodoma</option>
-                                                </select>
-                                                <small class="text-danger">
-                                                    @error('region_to')
-                                                        {{ $message }}
-                                                    @enderror
-                                                </small>
-                                            </div>
-                                        </div>
-                                    </div>
                                 </div>
                             </div>
                             <div class="card shadow">

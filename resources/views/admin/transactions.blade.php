@@ -1,12 +1,12 @@
 @extends('layouts.admin')
-@section('title', 'All Bookings Made - Online Bus Booking')
+@section('title', 'All Transactions Made - Online Bus Booking')
 
 @section('admin')
 <div class="container-fluid">
-    <h3 class="text-dark mb-4">All Bookings</h3>
+    <h3 class="text-dark mb-4">All Transactions</h3>
     <div class="card shadow">
         <div class="card-header py-3">
-            <p class="text-primary m-0 font-weight-bold">Bookings Available</p>
+            <p class="text-primary m-0 font-weight-bold">Transactions Made</p>
         </div>
         <div class="card-body">
             <div class="row">
@@ -27,15 +27,13 @@
                     <thead>
                         <tr>
                             <th>Fullname</th>
-                            <th>Bus</th>
-                            <th>Seats</th>
-                            <th>Price</th>
-                            <th>Travel Date</th>
-                            <th>Ticket No#</th>
-                            <th>From</th>
-                            <th>To</th>
-                            <th>Phone Number</th>
-                            <th>Booked By</th>
+                            <th>Company Name</th>
+                            <th>Bus Name</th>
+                            <th>Seat</th>
+                            <th>Paid</th>
+                            <th>Payment Mean</th>
+                            <th>Payment Number</th>
+                            <th>Status</th>
                         </tr>
                     </thead>
                     <tbody>
@@ -43,14 +41,12 @@
                         <tr>
                             <td>Alpha Jozee</td>
                             <td>Abood Express</td>
-                            <td>C1,C2</td>
+                            <td>Abood Express</td>
+                            <td>C1</td>
                             <td>60,000</td>
-                            <td>20/7/2022</td>
-                            <td>AB#123</td>
-                            <td>Dar-es-Salaam</td>
-                            <td>Mwanza</td>
+                            <td>credit Card</td>
                             <td>0743196599</td>
-                            <td>Agent</td>
+                            <td>Recived..</td>
                         </tr>
                         @endfor
                     </tbody>
