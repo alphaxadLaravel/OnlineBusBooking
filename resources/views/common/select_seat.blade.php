@@ -384,19 +384,19 @@
     <div class="list_item d-flex col-12 m-0 p-3 bg-white shadow-sm rounded-1 shadow-sm">
         <div class="d-flex w-100">
             <div class="bus_details w-100 pl-3">
-                <p class="mb-2 l-hght-18 font-weight-bold">More info.</p>
+                <p class="mb-2 l-hght-18 font-weight-bold">Please Provide Your Details.</p>
                 <div class="l-hght-10 my-2">
-                    <label class="text-muted mb-0 pr-1">Fullname</label>
+                    <label class="text-muted mb-2 pr-1">Fullname</label>
                     <input type="text" class="form-control mb-0 ml-auto l-hght-14">
                 </div>
                
                 <div class="l-hght-10  my-2">
-                    <label class="text-muted mb-0 pr-1">Phone Number</label>
+                    <label class="text-muted mb-2 pr-1">Phone Number</label>
                     <input type="text" class="form-control mb-0 ml-auto l-hght-14">
                 </div>
-                <div class="l-hght-10 d-flex align-items-center mt-3">
-                    <p class="mb-0 pr-1 font-weight-bold">Email</p>
-                    <input type="text" class="mb-0 ml-auto l-hght-14 text-danger font-weight-bold">
+                <div class="l-hght-10 my-2">
+                    <p class="mb-0 pr-1 text-muted mb-2 ">Email</p>
+                    <input type="text"  class="form-control mb-0 ml-auto l-hght-14">
                 </div>
             </div>
         </div>

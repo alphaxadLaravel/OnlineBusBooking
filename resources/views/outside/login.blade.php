@@ -12,10 +12,7 @@
         </div>
         <div class="px-3 pt-3 pb-5">
             <form action="/home">
-                <div class="form-group">
-                    <label class="text-muted f-10 mb-1">Mobile Number</label>
-                    <input type="number" class="form-control" placeholder="Enter Mobile Number" value="1234567890">
-                </div>
+             @csrf
                 <div class="form-group">
                     <label class="text-muted f-10 mb-1">Your Email</label>
                     <input type="email" class="form-control" placeholder="Enter Your Email" value="example@mail.com">
@@ -23,9 +20,6 @@
                 <div class="form-group">
                     <label class="text-muted f-10 mb-1">Password</label>
                     <input type="password" class="form-control" placeholder="Enter Your Password" value="osahan94">
-                </div>
-                <div class="text-right mb-3">
-                    <a href="change-password.html" class="text-muted small">Forgot your password?</a>
                 </div>
                 <button type="submit" class="btn btn-danger btn-block osahanbus-btn mb-4 rounded-1">SIGN IN</button>
             </form>

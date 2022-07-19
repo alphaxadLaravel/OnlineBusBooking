@@ -104,6 +104,11 @@ Route::get('/invoices', function () {
     return view('admin.invoices');
 });
 
+// Admins login page here
+Route::get('/admin', function () {
+    return view('outside.admins');
+});
+
 // Adding new Agent here
 Route::post('/new_agent',[AgentController::class,'addNewAgent']);
 
