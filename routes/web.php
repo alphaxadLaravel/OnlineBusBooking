@@ -6,6 +6,7 @@ use App\Http\Controllers\BusController;
 use App\Http\Controllers\CompanyController;
 use App\Http\Controllers\LoginController;
 use App\Http\Controllers\MailController;
+use App\Http\Controllers\SearchController;
 use App\Models\Bus;
 
 // page ya kwanza ku load system ikifunguka
@@ -28,15 +29,8 @@ Route::get('/bus_listing', function () {
     return view('common.bus_listing');
 });
 
-// Single Bus here
-Route::get('/single_bus', function () {
-    return view('common.single_bus');
-});
 
-// Seat Selected
-Route::get('/select_seat', function () {
-    return view('common.select_seat');
-});
+
 
 // ticket route here
 Route::get('/your_ticket', function () {
@@ -131,3 +125,11 @@ Route::get('/bus_route',[BusController::class,'goAddRoutes']);
 // add Route here
 Route::post('/new_route',[BusController::class,'newRoute']);
 
+// Searching here
+Route::post('/search',[SearchController::class,'searching']);
+
+// Single Bus here
+Route::get('/single_bus/{id}',[SearchController::class,'singleBus']);
+
+// Seat Selected
+Route::get('/select_seat/{id}',[SearchController::class,'selectSeat']);

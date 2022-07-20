@@ -28,4 +28,8 @@ class Bus extends Model
         return $this->belongsTo(Company::class);
     } 
 
+    public function busRoute(){
+        return $this->hasMany(BusRoute::class);
+    } 
+
 }

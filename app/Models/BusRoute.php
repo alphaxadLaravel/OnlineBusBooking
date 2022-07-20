@@ -23,5 +23,9 @@ class BusRoute extends Model
         'status'
     ];
 
+    public function bus(){
+        return $this->belongsTo(Bus::class);
+    } 
+
 
 }
