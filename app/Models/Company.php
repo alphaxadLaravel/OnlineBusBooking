@@ -18,4 +18,7 @@ class Company extends Model
     public function bus(){
         return $this->hasMany(Bus::class);
     } 
+    public function sub_admin(){
+        return $this->belongsTo(SubAdmin::class);
+    } 
 }

@@ -19,39 +19,28 @@
         <table class="table my-0" id="dataTable">
             <thead>
                 <tr>
-                    <th>Bus Name</th>
-                    <th>Region From</th>
-                    <th>Region To</th>
-                    <th>Travel Date</th>
-                    <th>Price</th>
-                    <th>Depart Time</th>
-                    <th>Arrival Time</th>
-                    <th>Pickup Area</th>
-                    <th>Arrival Area</th>
+                    <th>Company Name</th>
+                    <th>Admin Name</th>
+                    <th>Admin Phone</th>
+                    <th>Admin Email</th>
                 </tr>
             </thead>
             <tbody>
-                @foreach ($routes_available as $route)
+                @foreach ($companies as $company)
                     <tr>
-                        <td>{{$route->bus->bus}}</td>
-                        <td>{{$route->region_from}}</td>
-                        <td>{{$route->region_to}}</td>
-                        <td>{{$route->travel_date}}</td>
-                        <td class="text-success">{{number_format($route->price)}}</td>
-                        <td>{{$route->depart_time}}</td>
-                        <td>{{$route->arrival_time}}</td>
-                        <td class="text-primary">{{$route->depart_area}}</td>
-                        <td class="text-primary">{{$route->arrival_area}}</td>
+                        <td>{{ $company->companyName }}</td>
+                        <td>{{ $company->sub_admin->fullname }}</td>
+                        <td>{{ $company->sub_admin->phone }}</td>
+                        <td>{{ $company->sub_admin->email }}</td>
                     </tr>
-                @endforeach
+                @endforeach             
             </tbody>
         </table>
     </div>
     <div class="row">
-        
         <div class="col-md-6">
             <nav class="d-lg-flex justify-content-end dataTables_paginate paging_simple_numbers">
-                {{$routes_available->links()}}
+                {{$companies->links()}}
             </nav>
         </div>
     </div>

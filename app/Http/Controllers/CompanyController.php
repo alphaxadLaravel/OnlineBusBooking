@@ -38,8 +38,8 @@ class CompanyController extends Controller
             'companyName' => request('company'),
             'sub_admin_id' => $new_sub_admin->id,
         ]);
-        session()->flash('exist');
-        dd("added...");
+        session()->flash('added');
+        return redirect('/companies');
     }
 
 

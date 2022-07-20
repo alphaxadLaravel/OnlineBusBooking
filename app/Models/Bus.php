@@ -32,4 +32,8 @@ class Bus extends Model
         return $this->hasMany(BusRoute::class);
     } 
 
+    public function agent(){
+        return $this->hasMany(Agent::class);
+    } 
+
 }

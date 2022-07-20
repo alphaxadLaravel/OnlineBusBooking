@@ -20,4 +20,13 @@ class Agent extends Model
         'password',
         'status'
     ];
+
+    
+    public function bus(){
+        return $this->belongsTo(Bus::class);
+    } 
+
+    public function user(){
+        return $this->belongsTo(User::class);
+    }
 }

@@ -18,13 +18,20 @@ class SearchController extends Controller
         ]);
 
         if (request('date') < now()) {
-            dd('date is less...');
+            session()->flash('dates');
+            return redirect('/home');
         } else {
-            $bus_list = BusRoute::where('region_from', request('from'))->where('region_to', request('to'))->where('travel_date', request('date'))->get();
 
-            $from = request('from');
-            $to = request('to');
-            return view('common.bus_listing',['bus_list'=>$bus_list,'from'=>$from,'to'=>$to]);
+            if(request()){
+
+            }else{
+                $bus_list = BusRoute::where('region_from', request('from'))->where('region_to', request('to'))->where('travel_date', request('date'))->get();
+
+                $from = request('from');
+                $to = request('to');
+                return view('common.bus_listing',['bus_list'=>$bus_list,'from'=>$from,'to'=>$to]);
+            }
+           
         }
     }
 

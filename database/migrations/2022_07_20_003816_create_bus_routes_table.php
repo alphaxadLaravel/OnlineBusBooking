@@ -16,6 +16,7 @@ return new class extends Migration
         Schema::create('bus_routes', function (Blueprint $table) {
             $table->id();
             $table->bigInteger('bus_id')->unsigned();
+            $table->bigInteger('company_id')->unsigned();
             $table->string('travel_date');
             $table->string('price');
             $table->string('region_from');
@@ -26,6 +27,7 @@ return new class extends Migration
             $table->string('arrival_area');
             $table->string('status')->default('active');
             $table->foreign('bus_id')->references('id')->on('buses')->onDelete('cascade')->onUpdate('cascade');
+            $table->foreign('company_id')->references('id')->on('companies')->onDelete('cascade')->onUpdate('cascade');
             $table->timestamps();
         });
     }

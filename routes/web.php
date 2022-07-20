@@ -138,3 +138,8 @@ Route::post('/user_data/{id}',[BookingController::class,'userData']);
 Route::get('/routes_available', function () {
     return view('admin.bus_routes');
 });
+
+// List of companies here
+Route::get('/companies', function () {
+    return view('admin.companies');
+});

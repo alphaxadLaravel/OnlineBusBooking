@@ -21,5 +21,8 @@ class SubAdmin extends Model
     public function user(){
         return $this->belongsTo(User::class);
     } 
+    public function company(){
+        return $this->hasOne(Company::class);
+    } 
 
 }

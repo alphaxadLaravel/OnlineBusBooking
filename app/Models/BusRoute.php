@@ -12,6 +12,7 @@ class BusRoute extends Model
 
     protected $fillable = [
         'bus_id',
+        'company_id',
         'travel_date',
         'price',
         'region_from',

@@ -13,8 +13,15 @@
                 </div>
             </div>
         </div>
+
+
         <div class="bg-danger px-3 pb-3">
             <div class="bg-white rounded-1 p-3">
+                @if (Session::has('dates'))
+                    <div class="alert alert-warning alert-dismissible px-3" role="alert">
+                        Date Selected Has Arleady Passed!
+                    </div>
+                @endif
                 <form action="/search" method="post">
                     @csrf
                     <div class="form-group border-bottom pb-2">

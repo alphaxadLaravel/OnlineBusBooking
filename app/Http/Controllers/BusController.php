@@ -79,9 +79,12 @@ class BusController extends Controller
             'arrival' => 'required|string',
         ]);
 
-        // bus_id 	travel_date 	price 	region_from 	region_to 	depart_time 	arrival_time 	depart_area 	arrival_area 	status 	
 
         $check_route = BusRoute::where('bus_id',request('bus'))->where('travel_date',request('date'))->first();
+        
+        $subadmin = session()->get('subadmin')['id'];
+
+        $company = Company::where('sub_admin_id', $subadmin)->first();
 
         if($check_route){
             session()->flash('exist');
@@ -98,6 +101,7 @@ class BusController extends Controller
                     return redirect('/bus_route');
                 }else{
                     BusRoute::Create([
+                        'company_id'=> $company->id,
                         'bus_id'=> request('bus'),
                         'travel_date'=> request('date'),
                         'price'=> request('price'),
@@ -109,8 +113,8 @@ class BusController extends Controller
                         'arrival_area'=> request('arrival'),
                     ]);
 
-                    session()->flash('added');
-                    return redirect('/routes');
+                    session()->flash('routed');
+                    return redirect('/routes_available');
                 }
                
             }
