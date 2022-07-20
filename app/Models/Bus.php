@@ -12,9 +12,6 @@ class Bus extends Model
 
     protected $fillable = [
         'bus',
-        'region_from',
-        'region_to',
-        'price',
         'wifi',
         'AC',
         'food',

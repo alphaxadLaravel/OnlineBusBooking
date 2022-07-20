@@ -18,6 +18,19 @@
                                 <div class="card-body">
                                     <div class="form-row">
                                         <div class="col">
+                                            <div class="form-group"><label for="last_name"><strong>Agent's Bus</strong></label>
+                                                <select class="form-control" name="region_to" id="">
+                                                    <option value="">Select Agent's Bus..</option>
+                                                    <option value="Dar">dar-es-Salaam</option>
+                                                </select>
+                                                <small class="text-danger">
+                                                    @error('region_to')
+                                                        {{ $message }}
+                                                    @enderror
+                                                </small>
+                                            </div>
+                                        </div>
+                                        <div class="col">
                                             <div class="form-group"><label for="username"><strong>Agent Fullname</strong><br></label><input class="form-control"
                                                     type="text" placeholder="Enter agent Fullname" name="username">
                                                 <small class="text-danger">

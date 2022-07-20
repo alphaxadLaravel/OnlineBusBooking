@@ -28,18 +28,7 @@
                                                     </small>
                                                 </div>
                                         </div>
-                                        <div class="col">
-                                            <div class="form-group"><label
-                                                    for="email"><strong>Price</strong></label><input class="form-control"
-                                                    type="number"  placeholder="Enter Seat Price eg 30000"
-                                                    name="price">
-                                                    <small class="text-danger">
-                                                        @error('price')
-                                                            {{ $message }}
-                                                        @enderror
-                                                    </small>
-                                                </div>
-                                        </div>
+                                        
                                     </div>
                                 </div>
                             </div>

@@ -12,9 +12,7 @@ class BusController extends Controller
     {
         request()->validate([
             'bus' => 'required|string|unique:buses',
-            'region_from' => 'required|string',
-            'region_to' => 'required|string',
-            'price' => 'required|numeric|gt:0',
+            // 'price' => 'required|numeric|gt:0',
             'wifi' => 'required|string',
             'AC' => 'required|string',
             'food' => 'required|string',
@@ -35,9 +33,6 @@ class BusController extends Controller
 
         Bus::Create([
             'bus'=> request('bus'),
-            'region_from'=> request('region_from'),
-            'region_to'=> request('region_to'),
-            'price'=> request('price'),
             'wifi'=> request('wifi'),
             'AC'=> request('AC'),
             'food'=> request('food'),
