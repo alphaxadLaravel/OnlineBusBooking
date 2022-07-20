@@ -2,6 +2,7 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\AgentController;
+use App\Http\Controllers\BookingController;
 use App\Http\Controllers\BusController;
 use App\Http\Controllers\CompanyController;
 use App\Http\Controllers\LoginController;
@@ -28,8 +29,6 @@ Route::get('/home', function () {
 Route::get('/bus_listing', function () {
     return view('common.bus_listing');
 });
-
-
 
 
 // ticket route here
@@ -61,8 +60,6 @@ Route::get('/admin_dashboard', function () {
 Route::get('/add_bus', function () {
     return view('admin.add_bus');
 });
-
-
 
 // Busses List here
 Route::get('/bus_list', function () {
@@ -133,3 +130,6 @@ Route::get('/single_bus/{id}',[SearchController::class,'singleBus']);
 
 // Seat Selected
 Route::get('/select_seat/{id}',[SearchController::class,'selectSeat']);
+
+// user data for booking
+Route::post('/user_data/{id}',[BookingController::class,'userData']);

@@ -3,16 +3,17 @@
 namespace App\Http\Livewire;
 
 use Livewire\Component;
+use App\Models\BusRoute;
 
 class SelectSeat extends Component
 {
-    public $a1;
-    public $b1;
-    public $b2;
+
+    // refactor the code again...😪
+    // public $a1;
 
     public function render()
     {
-        dd($this->b1);
+
         return view('livewire.select-seat');
     }
 }
