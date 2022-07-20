@@ -23,11 +23,10 @@ class SearchController extends Controller
         } else {
 
             $bus_list = BusRoute::where('region_from', request('from'))->where('region_to', request('to'))->where('travel_date', request('date'))->get();
-
+            request()->session()->put('searched', $bus_list);
             $from = request('from');
             $to = request('to');
             return view('common.bus_listing',['bus_list'=>$bus_list,'from'=>$from,'to'=>$to]);
-           
         }
     }
 

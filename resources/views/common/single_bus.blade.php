@@ -9,7 +9,7 @@
                 <div class="d-flex justify-content-between px-3">
                     <div class="">
                         <small class="text-muted mb-1 f-10 pr-1">GOING FROM</small>
-                        <p class="small mb-0"> fdfds</p>
+                        <p class="small mb-0"> {{session()->get('user')['role']}}</p>
                     </div>
                     <div class="">
                         <small class="text-muted mb-1 f-10 pr-1">DATE</small>

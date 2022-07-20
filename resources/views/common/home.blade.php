@@ -4,7 +4,7 @@
 @section('admin')
 
 
-    <form action="/new_agent" method="POST">
+    <form action="/search" method="POST">
         @csrf
 
         <div class="row justify-content-center">
