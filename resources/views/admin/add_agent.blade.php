@@ -18,65 +18,61 @@
                                 <div class="card-body">
                                     <div class="form-row">
                                         <div class="col">
-                                            <div class="form-group"><label for="last_name"><strong>Agent's Bus</strong></label>
-                                                <select class="form-control" name="region_to" id="">
+                                            <div class="form-group"><label for="last_name"><strong>Agent's
+                                                        Bus</strong></label>
+                                                <select class="form-control" name="bus_name" id="">
                                                     <option value="">Select Agent's Bus..</option>
-                                                    <option value="Dar">dar-es-Salaam</option>
+                                                    @foreach ($buses as $bus)
+                                                        <option value="{{$bus->id}}">{{ucwords($bus->bus)}}</option>
+                                                    @endforeach
                                                 </select>
                                                 <small class="text-danger">
-                                                    @error('region_to')
+                                                    @error('bus_name')
                                                         {{ $message }}
                                                     @enderror
                                                 </small>
                                             </div>
                                         </div>
                                         <div class="col">
-                                            <div class="form-group"><label for="username"><strong>Agent Fullname</strong><br></label><input class="form-control"
-                                                    type="text" placeholder="Enter agent Fullname" name="username">
+                                            <div class="form-group"><label for="username"><strong>Agent
+                                                        Fullname</strong><br></label><input class="form-control"
+                                                    type="text" placeholder="Enter agent Fullname" name="fullname">
                                                 <small class="text-danger">
-                                                    @error('username')
+                                                    @error('fullname')
                                                         {{ $message }}
                                                     @enderror
                                                 </small>
                                             </div>
 
                                         </div>
-                                        <div class="col">
-                                            <div class="form-group"><label for="username"><strong>Agent Username</strong><br></label><input class="form-control"
-                                                    type="text" placeholder="Enter agent Username" name="username">
-                                                <small class="text-danger">
-                                                    @error('username')
-                                                        {{ $message }}
-                                                    @enderror
-                                                </small>
-                                            </div>
 
-                                        </div>
-                                       
                                     </div>
                                     <div class="form-row">
                                         <div class="col">
-                                            <div class="form-group"><label for="email"><strong>Agent Phone</strong></label><input class="form-control" type="number"
+                                            <div class="form-group"><label for="email"><strong>Agent
+                                                        Phone</strong></label><input class="form-control" type="number"
                                                     placeholder="Enter agent Phone e.g 07.." name="phone">
-                                                    <small class="text-danger">
-                                                        @error('phone')
-                                                            {{ $message }}
-                                                        @enderror
-                                                    </small>
-                                                </div>
+                                                <small class="text-danger">
+                                                    @error('phone')
+                                                        {{ $message }}
+                                                    @enderror
+                                                </small>
+                                            </div>
                                         </div>
                                         <div class="col">
-                                            <div class="form-group"><label for="username"><strong>Agent Email</strong><br></label><input class="form-control" type="email"
+                                            <div class="form-group"><label for="username"><strong>Agent
+                                                        Email</strong><br></label><input class="form-control" type="email"
                                                     placeholder="Enter agent Email" name="email">
-                                                    <small class="text-danger">
-                                                        @error('email')
-                                                            {{ $message }}
-                                                        @enderror
-                                                    </small>
-                                                </div>
+                                                <small class="text-danger">
+                                                    @error('email')
+                                                        {{ $message }}
+                                                    @enderror
+                                                </small>
+                                            </div>
                                         </div>
                                     </div>
-                                    <div class="form-group"><button class="btn btn-primary btn-sm" type="submit">Submit Agent Details</button></div>
+                                    <div class="form-group"><button class="btn btn-primary btn-sm" type="submit">Submit
+                                            Agent Details</button></div>
                                 </div>
                             </div>
                         </div>

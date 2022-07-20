@@ -4,6 +4,8 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Models\Bus;
+use App\Models\BusRoute;
+use App\Models\Company;
 
 class BusController extends Controller
 {
@@ -12,7 +14,6 @@ class BusController extends Controller
     {
         request()->validate([
             'bus' => 'required|string|unique:buses',
-            // 'price' => 'required|numeric|gt:0',
             'wifi' => 'required|string',
             'AC' => 'required|string',
             'food' => 'required|string',
@@ -31,7 +32,13 @@ class BusController extends Controller
 
         $path = 'buses/'.$photoName;
 
+        // get the subadmin details
+        $subadmin = session()->get('subadmin')['id'];
+
+        $company = Company::where('sub_admin_id', $subadmin)->first();
+
         Bus::Create([
+            'company_id' =>$company->id,
             'bus'=> request('bus'),
             'wifi'=> request('wifi'),
             'AC'=> request('AC'),
@@ -45,5 +52,71 @@ class BusController extends Controller
 
         session()->flash('bus','');
         return redirect('/bus_list');
+    }
+
+    // go add routes here
+    public function goAddroutes(){
+
+        $subadmin = session()->get('subadmin')['id'];
+
+        $company = Company::where('sub_admin_id', $subadmin)->first();
+        
+        $buses = Bus::where('company_id', $company->id)->get();
+
+        return view('admin.add_routes',['buses'=>$buses]);
+    }
+
+    public function newRoute(){
+        request()->validate([
+            'bus' => 'required|string',
+            'date' => 'required|string',
+            'price' => 'required|numeric|gt:0',
+            'region_from' => 'required|string',
+            'region_to' => 'required|string',
+            'time_left' => 'required|string',
+            'pickup' => 'required|string',
+            'time_arrival' => 'required|string',
+            'arrival' => 'required|string',
+        ]);
+
+        // bus_id 	travel_date 	price 	region_from 	region_to 	depart_time 	arrival_time 	depart_area 	arrival_area 	status 	
+
+        $check_route = BusRoute::where('bus_id',request('bus'))->where('travel_date',request('date'))->first();
+
+        if($check_route){
+            session()->flash('exist');
+            return redirect('/bus_route');
+        }else{
+
+            if(request('region_from') == request('region_to') ){
+                session()->flash('region');
+            return redirect('/bus_route');
+            }else{
+
+                if(request('date') < now()){
+                    session()->flash('date');
+                    return redirect('/bus_route');
+                }else{
+                    BusRoute::Create([
+                        'bus_id'=> request('bus'),
+                        'travel_date'=> request('date'),
+                        'price'=> request('price'),
+                        'region_from'=> request('region_from'),
+                        'region_to'=> request('region_to'),
+                        'depart_time'=> request('time_left'),
+                        'arrival_time'=> request('time_arrival'),
+                        'depart_area'=> request('pickup'),
+                        'arrival_area'=> request('arrival'),
+                    ]);
+
+                    session()->flash('added');
+                    return redirect('/routes');
+                }
+               
+            }
+            
+        }
+
+
     }
 }

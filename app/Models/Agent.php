@@ -12,8 +12,10 @@ class Agent extends Model
     protected $table = "agents";
 
     protected $fillable = [
+        'user_id',
+        'bus_id',
         'fullname',
-        'phoneNumber',
+        'phone',
         'email',
         'password',
         'status'

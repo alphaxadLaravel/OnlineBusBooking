@@ -3,6 +3,10 @@
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\AgentController;
 use App\Http\Controllers\BusController;
+use App\Http\Controllers\CompanyController;
+use App\Http\Controllers\LoginController;
+use App\Http\Controllers\MailController;
+use App\Models\Bus;
 
 // page ya kwanza ku load system ikifunguka
 Route::get('/', function () {
@@ -64,10 +68,7 @@ Route::get('/add_bus', function () {
     return view('admin.add_bus');
 });
 
-// Add new Agent
-Route::get('/add_agent', function () {
-    return view('admin.add_agent');
-});
+
 
 // Busses List here
 Route::get('/bus_list', function () {
@@ -94,10 +95,7 @@ Route::get('/transactions', function () {
     return view('admin.transactions');
 });
 
-// New bus route
-Route::get('/bus_route', function () {
-    return view('admin.add_routes');
-});
+
 
 // Invoices routes here
 Route::get('/invoices', function () {
@@ -114,3 +112,22 @@ Route::post('/new_agent',[AgentController::class,'addNewAgent']);
 
 // Add new Bus Here
 Route::post('/new_bus',[BusController::class,'addNewBus']);
+
+// Add Company to Database
+Route::post('/new_company',[CompanyController::class,'addCompany']);
+
+// Send text mail
+// Route::get('/send',[CompanyController::class,'mail']);
+
+// user logging in hre
+Route::post('/admins_login',[LoginController::class,'loginUsers']);
+
+// got to add Agent
+Route::get('/add_agent',[AgentController::class,'goAdAgent']);
+
+// go to Add routes here
+Route::get('/bus_route',[BusController::class,'goAddRoutes']);
+
+// add Route here
+Route::post('/new_route',[BusController::class,'newRoute']);
+

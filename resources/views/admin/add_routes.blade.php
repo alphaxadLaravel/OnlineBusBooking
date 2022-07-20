@@ -5,7 +5,7 @@
     <div class="container-fluid">
         <h3 class="text-dark mb-4">New Bus Route</h3>
 
-        <form action="/new_bus" method="POST" enctype="multipart/form-data">
+        <form action="/new_route" method="POST">
             @csrf
             <div class="row mb-3">
                 <div class="col-lg-12">
@@ -20,12 +20,14 @@
                                         <div class="col">
                                             <div class="form-group"><label for="username"><strong> Bus Name
                                                     </strong><br></label>
-                                                <select class="form-control" name="najim" id="">
+                                                <select class="form-control" name="bus" id="">
                                                     <option value="">Select Bus Name..</option>
-                                                    <option value="Najim Nisa">Najim Nisa</option>
+                                                    @foreach ($buses as $bus)
+                                                    <option value="{{$bus->id}}">{{$bus->bus}}</option>
+                                                    @endforeach
                                                 </select>
                                                 <small class="text-danger">
-                                                    @error('najim')
+                                                    @error('bus')
                                                         {{ $message }}
                                                     @enderror
                                                 </small>

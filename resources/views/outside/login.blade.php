@@ -11,15 +11,15 @@
            
         </div>
         <div class="px-3 pt-3 pb-5">
-            <form action="/home">
+            <form action="/home" >
              @csrf
                 <div class="form-group">
                     <label class="text-muted f-10 mb-1">Your Email</label>
-                    <input type="email" class="form-control" placeholder="Enter Your Email" value="example@mail.com">
+                    <input type="email" class="form-control" placeholder="Enter Your Email">
                 </div>
                 <div class="form-group">
                     <label class="text-muted f-10 mb-1">Password</label>
-                    <input type="password" class="form-control" placeholder="Enter Your Password" value="osahan94">
+                    <input type="password" class="form-control" placeholder="Enter Your Password">
                 </div>
                 <button type="submit" class="btn btn-danger btn-block osahanbus-btn mb-4 rounded-1">SIGN IN</button>
             </form>

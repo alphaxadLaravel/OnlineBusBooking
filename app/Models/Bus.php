@@ -11,6 +11,7 @@ class Bus extends Model
     protected $table = "buses";
 
     protected $fillable = [
+        'company_id',
         'bus',
         'wifi',
         'AC',
@@ -22,4 +23,9 @@ class Bus extends Model
         'photo',
         'status'
     ];
+
+    public function company(){
+        return $this->belongsTo(Company::class);
+    } 
+
 }
