@@ -143,3 +143,18 @@ Route::get('/routes_available', function () {
 Route::get('/companies', function () {
     return view('admin.companies');
 });
+
+
+
+
+
+
+
+// List
+// Route::get('/list', function () {
+//     return view('common.bus_listing');
+// });
+
+// Route::get('/single', function () {
+//     return view('common.single_bus');
+// });

@@ -23,7 +23,7 @@ class BusRoutes extends Component
 
         $company = Company::where('sub_admin_id', $subadmin)->first();
 
-        $routes_available = BusRoute::where('company_id', $company->id)->orderBy('id', 'DESC')->paginate(1);
+        $routes_available = BusRoute::where('company_id', $company->id)->orderBy('id', 'DESC')->paginate(5);
         return view('livewire.bus-routes', ['routes_available' => $routes_available]);
     }
 }

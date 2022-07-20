@@ -10,17 +10,19 @@
         href="{{ asset('assets/bootstrap/css/bootstrap.min.css?h=f5f356e3f332dfdd6f287ec04cb8028a') }}">
     <link rel="stylesheet" href="{{ asset('assets/css/Nunito.css?h=119b3d3229ddd887af19d2dbd611f1f4') }}">
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.12.0/css/all.css">
+    <link href="{{ asset('css/custom.css') }}" rel="stylesheet">
 </head>
 
 <body id="page-top">
 
     <div id="wrapper">
-        @include('components.admin_sidebar')
+        {{-- @if (!session()->get('user')['role'] == 'admin' && !session()->get('user')['role'] == 'SubAdmin') --}}
+            @include('components.admin_sidebar')
+        {{-- @endif --}}
         <div class="d-flex flex-column" id="content-wrapper">
             <div id="content">
                 @include('components.admin_topnav')
                 @yield('admin')
-
             </div>
             @include('components.admin_footer')
         </div><a class="border rounded d-inline scroll-to-top" href="#page-top"><i class="fas fa-angle-up"></i></a>

@@ -1,70 +1,131 @@
-@extends('layouts.app')
+@extends('layouts.admin')
 @section('title', 'All Buses - Online Bus Booking System')
 
-@section('pages')
-    <div class="osahan-listing">
-        <div class="osahan-header-nav shadow-sm p-3 d-flex align-items-center bg-danger">
-            <h5 class="font-weight-normal mb-0 text-white">
-                <a class="text-danger" href="/home"><i class="icofont-rounded-left"></i></a>
-            </h5>
-            <div class="ml-auto d-flex align-items-center">
-                <a href="/home" class="text-white mx-3 h6 mb-0"><i class="icofont-search-1"></i></a>
+@section('admin')
+    <div class="p-2  w-100">
+        <div class="card">
+            <div class="card-body">
+                <div class="d-flex justify-content-between px-3">
+                    <div class="">
+                        <small class="text-muted mb-1 f-10 pr-1">GOING FROM</small>
+                        <p class="small mb-0"> fdfds</p>
+                    </div>
+                    <div class="">
+                        <small class="text-muted mb-1 f-10 pr-1">DATE</small>
+                        <p class="small mb-0"> 20/20/2022</p>
 
-                <a class="toggle osahan-toggle h4 m-0 text-white ml-auto" href="#"><i
-                        class="icofont-navigation-menu"></i></a>
-            </div>
-        </div>
-        <div class="osahan-listing p-0 m-0 row border-top">
-            <div class="p-2 border-bottom w-100">
-                <div class="bg-white border border-warning rounded-1 shadow-sm p-2">
-                    <div class="row mx-0 px-1">
-                        <div class="col-6 p-0">
-                            <small class="text-muted mb-1 f-10 pr-1">GOING FROM</small>
-                            <p class="small mb-0"> {{$from}}</p>
-                        </div>
-                        <div class="col-6 p-0">
-                            <small class="text-muted mb-1 f-10 pr-1">GOING TO</small>
-                            <p class="small mb-0"> {{$to}}</p>
-                        </div>
+                    </div>
+                    <div class="">
+                        <small class="text-muted mb-1 f-10 pr-1">GOING TO</small>
+                        <p class="small mb-0"> dsfdsf</p>
                     </div>
                 </div>
             </div>
-            @foreach ($bus_list as $bus)
-                <a href="/single_bus/{{$bus->id}}" class="text-dark col-6 px-0">
-                    <div class="list_item_gird m-0 bg-white shadow-sm listing-item border-bottom border-right">
-                        <div class="px-3 pt-3 tic-div">
-                            <div class="list-item-img">
-                                <img src={{asset($bus->bus->photo)}} class="img-fluid">
-                            </div>
-                            <p class="mb-0 l-hght-10">{{$bus->bus->company->companyName}}</p>
-                            <span class="text-danger small">{{$bus->region_from}} - {{$bus->region_to}}</span>
-
-                        </div>
-                        <div class="p-3 d-flex">
-                            <div class="bus_details w-100">
-                                <div class="d-flex">
-                                    <p><i class="icofont-wind mr-2 text-danger"></i><span class="small">{{$bus->bus->AC}}</span></p>
-                                </div>
-                                <div class="d-flex l-hght-10">
-                                    <span class="icofont-clock-time small mr-2 text-danger"></span>
-                                    <div>
-                                        <small class="text-muted mb-2 d-block">Journey Start</small>
-                                        <p class="small">{{$bus->travel_date}}, {{$bus->depart_time}}</p>
-                                    </div>
-                                </div>
-                                <div class="d-flex l-hght-10">
-                                    <span class="icofont-google-map small mr-2 text-danger"></span>
-                                    <div>
-                                        <small class="text-muted mb-2 d-block">From - To</small>
-                                        <p class="small mb-1">{{$bus->region_from}} - {{$bus->region_to}}</p>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </a>
-            @endforeach
         </div>
     </div>
+
+    <div class="row mx-3 mt-3">
+        @for ($i = 0; $i < 4; $i++)
+        <div class="col-md-3 mb-3">
+            <div class="card">
+                <img class="card-img-top" src="{{asset('buses/1658287153.jpg')}}" alt="">
+                <div class="card-body">
+                    <h4 class="card-title text-danger">Abood express</h4>
+                    <div class="row">
+                        <div class="col-md-12 mb-2">
+                            <small class="text-bold">Rouete</small>
+                            <p class="card-text">Dar-es-Salaam <span class="text-danger">-</span> Tanga</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="card-footer d-flex justify-content-center align-items-center p-1">
+                    <span><span class="text-">Price: Tsh</span><span class="text-danger"> 30,000</span></span>
+
+                </div>
+            </div>
+        </div>
+        @endfor
+    </div>
+    
+
+    {{-- <div class="container-fluid">
+
+        <form action="/new_agent" method="POST">
+            @csrf
+            <div class="row mb-3">
+                <div class="col-lg-12">
+                    <div class="row">
+                        <div class="col">
+                            <div class="card shadow mb-3">
+                                <div class="card-header py-3">
+                                    <p class="text-primary m-0 font-weight-bold">Agent Details</p>
+                                </div>
+                                <div class="card-body">
+                                    <div class="form-row">
+                                        <div class="col">
+                                            <div class="form-group"><label for="last_name"><strong>Agent's
+                                                        Bus</strong></label>
+                                                <select class="form-control" name="bus_name" id="">
+                                                    <option value="">Select Agent's Bus..</option>
+                                                   
+                                                </select>
+                                                <small class="text-danger">
+                                                    @error('bus_name')
+                                                        {{ $message }}
+                                                    @enderror
+                                                </small>
+                                            </div>
+                                        </div>
+                                        <div class="col">
+                                            <div class="form-group"><label for="username"><strong>Agent
+                                                        Fullname</strong><br></label><input class="form-control"
+                                                    type="text" placeholder="Enter agent Fullname" name="fullname">
+                                                <small class="text-danger">
+                                                    @error('fullname')
+                                                        {{ $message }}
+                                                    @enderror
+                                                </small>
+                                            </div>
+
+                                        </div>
+
+                                    </div>
+                                    <div class="form-row">
+                                        <div class="col">
+                                            <div class="form-group"><label for="email"><strong>Agent
+                                                        Phone</strong></label><input class="form-control" type="number"
+                                                    placeholder="Enter agent Phone e.g 07.." name="phone">
+                                                <small class="text-danger">
+                                                    @error('phone')
+                                                        {{ $message }}
+                                                    @enderror
+                                                </small>
+                                            </div>
+                                        </div>
+                                        <div class="col">
+                                            <div class="form-group"><label for="username"><strong>Agent
+                                                        Email</strong><br></label><input class="form-control" type="email"
+                                                    placeholder="Enter agent Email" name="email">
+                                                <small class="text-danger">
+                                                    @error('email')
+                                                        {{ $message }}
+                                                    @enderror
+                                                </small>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="form-group"><button class="btn btn-primary btn-sm" type="submit">Submit
+                                            Agent Details</button></div>
+                                </div>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+        </form>
+
+    </div> --}}
+
 
 @endsection

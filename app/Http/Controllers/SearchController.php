@@ -22,15 +22,11 @@ class SearchController extends Controller
             return redirect('/home');
         } else {
 
-            if(request()){
+            $bus_list = BusRoute::where('region_from', request('from'))->where('region_to', request('to'))->where('travel_date', request('date'))->get();
 
-            }else{
-                $bus_list = BusRoute::where('region_from', request('from'))->where('region_to', request('to'))->where('travel_date', request('date'))->get();
-
-                $from = request('from');
-                $to = request('to');
-                return view('common.bus_listing',['bus_list'=>$bus_list,'from'=>$from,'to'=>$to]);
-            }
+            $from = request('from');
+            $to = request('to');
+            return view('common.bus_listing',['bus_list'=>$bus_list,'from'=>$from,'to'=>$to]);
            
         }
     }
@@ -38,7 +34,7 @@ class SearchController extends Controller
     public function singleBus($id){
 
         $single_bus = BusRoute::where('id','=', $id)->get();
-        return view('common.single_bus',['single_bus'=>$single_bus]);
+        return view('admin.companies',['single_bus'=>$single_bus]);
     }
 
     public function selectSeat($id){
