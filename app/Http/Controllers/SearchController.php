@@ -34,7 +34,7 @@ class SearchController extends Controller
     public function singleBus($id){
 
         $single_bus = BusRoute::where('id','=', $id)->get();
-        return view('admin.companies',['single_bus'=>$single_bus]);
+        return view('common.single_bus',['single_bus'=>$single_bus]);
     }
 
     public function selectSeat($id){

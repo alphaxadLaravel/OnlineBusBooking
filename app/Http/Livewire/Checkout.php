@@ -11,6 +11,17 @@ class Checkout extends Component
     public $branch;
 
     public $seat;
+    public $A1;
+
+    public function checkout(){
+        // for ($i=0; $i < count($this->selected); $i--) { 
+        //     dd($this->selected[$i]);
+        // }
+
+        foreach ($this->selected as $key => $value) {
+            dd($value);
+        }
+    }
 
     public function render()
     {

@@ -87,7 +87,6 @@ Route::get('/transactions', function () {
 });
 
 
-
 // Invoices routes here
 Route::get('/invoices', function () {
     return view('admin.invoices');

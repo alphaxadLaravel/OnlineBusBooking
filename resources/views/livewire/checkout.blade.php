@@ -16,160 +16,160 @@
                         <p class="small f-10">Selected</p>
                     </div>
                 </div>
-                <div class="select-seat">
-                    <div class="checkboxes-seat mt-4">
+                <div >
+                    <div class=" mt-4">
                         <div class="btn-group btn-group-toggle d-block mb-1" data-toggle="buttons">
-                            <label class="btn check-seat btn-success small btn-sm rounded mr-2 mb-2">
-                                <input type="checkbox" name="a1" autocomplete="off">
+                            <label class="btn {{($A1 == "A1") ? 'btn-secondary':'btn-danger'}}   small btn-sm rounded mr-2 mb-2">
+                                <input type="checkbox" wire:model="A1"  value="a1" >
                                 A1
                         </div>
                         <div class="btn-group btn-group-toggle d-block mb-1" data-toggle="buttons">
-                            <label class="btn check-seat btn-success small btn-sm rounded mr-2 mb-2">
-                                <input type="checkbox" name="b1" autocomplete="off">
+                            <label class="btn {{($A1 == "A1") ? 'btn-secondary':'btn-danger'}} small btn-sm rounded mr-2 mb-2">
+                                <input type="checkbox"   wire:model="A1"  value="b1" autocomplete="off">
                                 B1
                             </label>
                             <label class="btn check-seat btn-secondary small btn-sm rounded mr-2 mb-2">
-                                <input type="checkbox" name="b2" autocomplete="off">
+                                <input type="checkbox"   value="b2" autocomplete="off">
                                 B2
                             </label>
                         </div>
                         <div class="btn-group btn-group-toggle d-block mb-1" data-toggle="buttons">
                             <label class="btn check-seat btn-danger small btn-sm rounded mr-2 mb-2">
-                                <input type="checkbox" name="c1" autocomplete="off" checked disabled>
+                                <input type="checkbox"   value="c1" autocomplete="off" checked disabled>
                                 C1
                             </label>
                             <label class="btn check-seat btn-danger small btn-sm rounded mr-2 mb-2">
-                                <input type="checkbox" name="c2" autocomplete="off" checked disabled>
+                                <input type="checkbox"   value="c2" autocomplete="off" checked disabled>
                                 C2
                             </label>
                         </div>
                         <div class="btn-group btn-group-toggle d-block mb-1" data-toggle="buttons">
                             <label class="btn check-seat btn-danger small btn-sm rounded mr-2 mb-2">
-                                <input type="checkbox" name="d1" autocomplete="off" checked disabled>
+                                <input type="checkbox"   value="d1" autocomplete="off" checked disabled>
                                 D1
                             </label>
                             <label class="btn check-seat btn-success small btn-sm rounded mr-2 mb-2">
-                                <input type="checkbox" name="d2" autocomplete="off">
+                                <input type="checkbox"   value="d2" autocomplete="off">
                                 D2
                             </label>
                         </div>
                         <div class="btn-group btn-group-toggle d-block mb-1" data-toggle="buttons">
                             <label class="btn check-seat btn-success small btn-sm rounded mr-2 mb-2">
-                                <input type="checkbox" name="e1" autocomplete="off">
+                                <input type="checkbox"   value="e1" autocomplete="off">
                                 E1
                             </label>
                             <label class="btn check-seat btn-success small btn-sm rounded mr-2 mb-2">
-                                <input type="checkbox" name="e2" autocomplete="off">
+                                <input type="checkbox"   value="e2" autocomplete="off">
                                 E2
                             </label>
                         </div>
                         <div class="btn-group btn-group-toggle d-block mb-1" data-toggle="buttons">
                             <label class="btn check-seat btn-success small btn-sm rounded mr-2 mb-2">
-                                <input type="checkbox" name="f1" autocomplete="off">
+                                <input type="checkbox"   value="f1" autocomplete="off">
                                 F1
                             </label>
                             <label class="btn check-seat btn-success small btn-sm rounded mr-2 mb-2">
-                                <input type="checkbox" name="f2" autocomplete="off">
+                                <input type="checkbox"   value="f2" autocomplete="off">
                                 F2
                             </label>
                         </div>
                         <div class="btn-group btn-group-toggle d-block mb-1" data-toggle="buttons">
                             <label class="btn check-seat btn-success small btn-sm rounded mr-2 mb-2">
-                                <input type="checkbox" name="f1" autocomplete="off">
+                                <input type="checkbox"   value="f1" autocomplete="off">
                                 F1
                             </label>
                             <label class="btn check-seat btn-success small btn-sm rounded mr-2 mb-2">
-                                <input type="checkbox" name="f2" autocomplete="off">
+                                <input type="checkbox"   value="f2" autocomplete="off">
                                 F2
                             </label>
                         </div>
                         <div class="btn-group btn-group-toggle d-block mb-1" data-toggle="buttons">
                             <label class="btn check-seat btn-success small btn-sm rounded mr-2 mb-2">
-                                <input type="checkbox" name="f1" autocomplete="off">
+                                <input type="checkbox"   value="f1" autocomplete="off">
                                 F1
                             </label>
                             <label class="btn check-seat btn-success small btn-sm rounded mr-2 mb-2">
-                                <input type="checkbox" name="f2" autocomplete="off">
+                                <input type="checkbox"   value="f2" autocomplete="off">
                                 F2
                             </label>
                         </div>
                         <div class="btn-group btn-group-toggle d-block mb-1" data-toggle="buttons">
                             <label class="btn check-seat btn-success small btn-sm rounded mr-2 mb-2">
-                                <input type="checkbox" name="f1" autocomplete="off">
+                                <input type="checkbox"   value="f1" autocomplete="off">
                                 F1
                             </label>
                             <label class="btn check-seat btn-success small btn-sm rounded mr-2 mb-2">
-                                <input type="checkbox" name="f2" autocomplete="off">
+                                <input type="checkbox"   value="f2" autocomplete="off">
                                 F2
                             </label>
                         </div>
                         <div class="btn-group btn-group-toggle d-block mb-1" data-toggle="buttons">
                             <label class="btn check-seat btn-success small btn-sm rounded mr-2 mb-2">
-                                <input type="checkbox" name="f1" autocomplete="off">
+                                <input type="checkbox"   value="f1" autocomplete="off">
                                 F1
                             </label>
                             <label class="btn check-seat btn-success small btn-sm rounded mr-2 mb-2">
-                                <input type="checkbox" name="f2" autocomplete="off">
+                                <input type="checkbox"   value="f2" autocomplete="off">
                                 F2
                             </label>
                         </div>
                         <div class="btn-group btn-group-toggle d-block mb-1" data-toggle="buttons">
                             <label class="btn check-seat btn-success small btn-sm rounded mr-2 mb-2">
-                                <input type="checkbox" name="f1" autocomplete="off">
+                                <input type="checkbox"   value="f1" autocomplete="off">
                                 F1
                             </label>
                             <label class="btn check-seat btn-success small btn-sm rounded mr-2 mb-2">
-                                <input type="checkbox" name="f2" autocomplete="off">
+                                <input type="checkbox"   value="f2" autocomplete="off">
                                 F2
                             </label>
                         </div>
                         <div class="btn-group btn-group-toggle d-block mb-1" data-toggle="buttons">
                             <label class="btn check-seat btn-success small btn-sm rounded mr-2 mb-2">
-                                <input type="checkbox" name="f1" autocomplete="off">
+                                <input type="checkbox"   value="f1" autocomplete="off">
                                 F1
                             </label>
                             <label class="btn check-seat btn-success small btn-sm rounded mr-2 mb-2">
-                                <input type="checkbox" name="f2" autocomplete="off">
+                                <input type="checkbox"   value="f2" autocomplete="off">
                                 F2
                             </label>
                         </div>
                         <div class="btn-group btn-group-toggle d-block mb-1" data-toggle="buttons">
                             <label class="btn check-seat btn-success small btn-sm rounded mr-2 mb-2">
-                                <input type="checkbox" name="f1" autocomplete="off">
+                                <input type="checkbox"   value="f1" autocomplete="off">
                                 F1
                             </label>
                             <label class="btn check-seat btn-success small btn-sm rounded mr-2 mb-2">
-                                <input type="checkbox" name="f2" autocomplete="off">
+                                <input type="checkbox"   value="f2" autocomplete="off">
                                 F2
                             </label>
                         </div>
                         <div class="btn-group btn-group-toggle d-block mb-1" data-toggle="buttons">
                             <label class="btn check-seat btn-success small btn-sm rounded mr-2 mb-2">
-                                <input type="checkbox" name="f1" autocomplete="off">
+                                <input type="checkbox"   value="f1" autocomplete="off">
                                 F1
                             </label>
                             <label class="btn check-seat btn-success small btn-sm rounded mr-2 mb-2">
-                                <input type="checkbox" name="f2" autocomplete="off">
+                                <input type="checkbox"   value="f2" autocomplete="off">
                                 F2
                             </label>
                         </div>
                         <div class="btn-group btn-group-toggle d-block mb-1" data-toggle="buttons">
                             <label class="btn check-seat btn-success small btn-sm rounded mr-2 mb-2">
-                                <input type="checkbox" name="f1" autocomplete="off">
+                                <input type="checkbox"   value="f1" autocomplete="off">
                                 F1
                             </label>
                             <label class="btn check-seat btn-success small btn-sm rounded mr-2 mb-2">
-                                <input type="checkbox" name="f2" autocomplete="off">
+                                <input type="checkbox"   value="f2" autocomplete="off">
                                 F2
                             </label>
                         </div>
                         <div class="btn-group btn-group-toggle d-block mb-1" data-toggle="buttons">
                             <label class="btn check-seat btn-success small btn-sm rounded mr-2 mb-2">
-                                <input type="checkbox" name="g1" autocomplete="off">
+                                <input type="checkbox"   value="g1" autocomplete="off">
                                 G1
                             </label>
                             <label class="btn check-seat btn-success small btn-sm rounded mr-2 mb-2">
-                                <input type="checkbox" name="g2" autocomplete="off">
+                                <input type="checkbox"   value="g2" autocomplete="off">
                                 G2
                             </label>
                         </div>
@@ -181,151 +181,151 @@
                 <div class="checkboxes-seat mt-4">
                     <div class="btn-group btn-group-toggle d-block mb-1" data-toggle="buttons">
                         <label class="btn check-seat btn-success small btn-sm rounded mr-2 mb-2">
-                            <input type="checkbox" name="b1" autocomplete="off">
+                            <input type="checkbox"   value="b1" autocomplete="off">
                             B1
                         </label>
                         <label class="btn check-seat btn-success small btn-sm rounded mr-2 mb-2">
-                            <input type="checkbox" name="b2" autocomplete="off">
+                            <input type="checkbox"   value="b2" autocomplete="off">
                             B2
                         </label>
                     </div>
                     <div class="btn-group btn-group-toggle d-block mb-1" data-toggle="buttons">
                         <label class="btn check-seat btn-danger small btn-sm rounded mr-2 mb-2">
-                            <input type="checkbox" name="c1" autocomplete="off" checked disabled>
+                            <input type="checkbox"   value="c1" autocomplete="off" checked disabled>
                             C1
                         </label>
                         <label class="btn check-seat btn-danger small btn-sm rounded mr-2 mb-2">
-                            <input type="checkbox" name="c2" autocomplete="off" checked disabled>
+                            <input type="checkbox"   value="c2" autocomplete="off" checked disabled>
                             C2
                         </label>
                     </div>
                     <div class="btn-group btn-group-toggle d-block mb-1" data-toggle="buttons">
                         <label class="btn check-seat btn-danger small btn-sm rounded mr-2 mb-2">
-                            <input type="checkbox" name="d1" autocomplete="off" checked disabled>
+                            <input type="checkbox"   value="d1" autocomplete="off" checked disabled>
                             D1
                         </label>
                         <label class="btn check-seat btn-success small btn-sm rounded mr-2 mb-2">
-                            <input type="checkbox" name="d2" autocomplete="off">
+                            <input type="checkbox"   value="d2" autocomplete="off">
                             D2
                         </label>
                     </div>
                     <div class="btn-group btn-group-toggle d-block mb-1" data-toggle="buttons">
                         <label class="btn check-seat btn-success small btn-sm rounded mr-2 mb-2">
-                            <input type="checkbox" name="e1" autocomplete="off">
+                            <input type="checkbox"   value="e1" autocomplete="off">
                             E1
                         </label>
                         <label class="btn check-seat btn-success small btn-sm rounded mr-2 mb-2">
-                            <input type="checkbox" name="e2" autocomplete="off">
+                            <input type="checkbox"   value="e2" autocomplete="off">
                             E2
                         </label>
                     </div>
                     <div class="btn-group btn-group-toggle d-block mb-1" data-toggle="buttons">
                         <label class="btn check-seat btn-success small btn-sm rounded mr-2 mb-2">
-                            <input type="checkbox" name="f1" autocomplete="off">
+                            <input type="checkbox"   value="f1" autocomplete="off">
                             F1
                         </label>
                         <label class="btn check-seat btn-success small btn-sm rounded mr-2 mb-2">
-                            <input type="checkbox" name="f2" autocomplete="off">
+                            <input type="checkbox"   value="f2" autocomplete="off">
                             F2
                         </label>
                     </div>
                     <div class="btn-group btn-group-toggle d-block mb-1" data-toggle="buttons">
                         <label class="btn check-seat btn-success small btn-sm rounded mr-2 mb-2">
-                            <input type="checkbox" name="f1" autocomplete="off">
+                            <input type="checkbox"   value="f1" autocomplete="off">
                             F1
                         </label>
                         <label class="btn check-seat btn-success small btn-sm rounded mr-2 mb-2">
-                            <input type="checkbox" name="f2" autocomplete="off">
+                            <input type="checkbox"   value="f2" autocomplete="off">
                             F2
                         </label>
                     </div>
                     <div class="btn-group btn-group-toggle d-block mb-1" data-toggle="buttons">
                         <label class="btn check-seat btn-success small btn-sm rounded mr-2 mb-2">
-                            <input type="checkbox" name="f1" autocomplete="off">
+                            <input type="checkbox"   value="f1" autocomplete="off">
                             F1
                         </label>
                         <label class="btn check-seat btn-success small btn-sm rounded mr-2 mb-2">
-                            <input type="checkbox" name="f2" autocomplete="off">
+                            <input type="checkbox"   value="f2" autocomplete="off">
                             F2
                         </label>
                     </div>
                     <div class="btn-group btn-group-toggle d-block mb-1" data-toggle="buttons">
                         <label class="btn check-seat btn-success small btn-sm rounded mr-2 mb-2">
-                            <input type="checkbox" name="f1" autocomplete="off">
+                            <input type="checkbox"   value="f1" autocomplete="off">
                             F1
                         </label>
                         <label class="btn check-seat btn-success small btn-sm rounded mr-2 mb-2">
-                            <input type="checkbox" name="f2" autocomplete="off">
+                            <input type="checkbox"   value="f2" autocomplete="off">
                             F2
                         </label>
                     </div>
                     <div class="btn-group btn-group-toggle d-block mb-1" data-toggle="buttons">
                         <label class="btn check-seat btn-success small btn-sm rounded mr-2 mb-2">
-                            <input type="checkbox" name="f1" autocomplete="off">
+                            <input type="checkbox"   value="f1" autocomplete="off">
                             F1
                         </label>
                         <label class="btn check-seat btn-success small btn-sm rounded mr-2 mb-2">
-                            <input type="checkbox" name="f2" autocomplete="off">
+                            <input type="checkbox"   value="f2" autocomplete="off">
                             F2
                         </label>
                     </div>
                     <div class="btn-group btn-group-toggle d-block mb-1" data-toggle="buttons">
                         <label class="btn check-seat btn-success small btn-sm rounded mr-2 mb-2">
-                            <input type="checkbox" name="f1" autocomplete="off">
+                            <input type="checkbox"   value="f1" autocomplete="off">
                             F1
                         </label>
                         <label class="btn check-seat btn-success small btn-sm rounded mr-2 mb-2">
-                            <input type="checkbox" name="f2" autocomplete="off">
+                            <input type="checkbox"   value="f2" autocomplete="off">
                             F2
                         </label>
                     </div>
                     <div class="btn-group btn-group-toggle d-block mb-1" data-toggle="buttons">
                         <label class="btn check-seat btn-success small btn-sm rounded mr-2 mb-2">
-                            <input type="checkbox" name="f1" autocomplete="off">
+                            <input type="checkbox"   value="f1" autocomplete="off">
                             F1
                         </label>
                         <label class="btn check-seat btn-success small btn-sm rounded mr-2 mb-2">
-                            <input type="checkbox" name="f2" autocomplete="off">
+                            <input type="checkbox"   value="f2" autocomplete="off">
                             F2
                         </label>
                     </div>
                     <div class="btn-group btn-group-toggle d-block mb-1" data-toggle="buttons">
                         <label class="btn check-seat btn-success small btn-sm rounded mr-2 mb-2">
-                            <input type="checkbox" name="f1" autocomplete="off">
+                            <input type="checkbox"   value="f1" autocomplete="off">
                             F1
                         </label>
                         <label class="btn check-seat btn-success small btn-sm rounded mr-2 mb-2">
-                            <input type="checkbox" name="f2" autocomplete="off">
+                            <input type="checkbox"   value="f2" autocomplete="off">
                             F2
                         </label>
                     </div>
                     <div class="btn-group btn-group-toggle d-block mb-1" data-toggle="buttons">
                         <label class="btn check-seat btn-success small btn-sm rounded mr-2 mb-2">
-                            <input type="checkbox" name="f1" autocomplete="off">
+                            <input type="checkbox"   value="f1" autocomplete="off">
                             F1
                         </label>
                         <label class="btn check-seat btn-success small btn-sm rounded mr-2 mb-2">
-                            <input type="checkbox" name="f2" autocomplete="off">
+                            <input type="checkbox"   value="f2" autocomplete="off">
                             F2
                         </label>
                     </div>
                     <div class="btn-group btn-group-toggle d-block mb-1" data-toggle="buttons">
                         <label class="btn check-seat btn-success small btn-sm rounded mr-2 mb-2">
-                            <input type="checkbox" name="f1" autocomplete="off">
+                            <input type="checkbox"   value="f1" autocomplete="off">
                             F1
                         </label>
                         <label class="btn check-seat btn-success small btn-sm rounded mr-2 mb-2">
-                            <input type="checkbox" name="f2" autocomplete="off">
+                            <input type="checkbox"   value="f2" autocomplete="off">
                             F2
                         </label>
                     </div>
                     <div class="btn-group btn-group-toggle d-block mb-1" data-toggle="buttons">
                         <label class="btn check-seat btn-success small btn-sm rounded mr-2 mb-2">
-                            <input type="checkbox" name="g1" autocomplete="off">
+                            <input type="checkbox"   value="g1" autocomplete="off">
                             G1
                         </label>
                         <label class="btn check-seat btn-success small btn-sm rounded mr-2 mb-2">
-                            <input type="checkbox" name="g2" autocomplete="off">
+                            <input type="checkbox"   value="g2" autocomplete="off">
                             G2
                         </label>
                     </div>
@@ -464,8 +464,8 @@
                             <input type="number" class="form-control form-control-sm" placeholder="...."
                                 id="" aria-describedby="emailHelp">
                         </div>
-                        <a href="#"><button type="button" class="btn btn-danger btn-block"
-                                data-toggle="modal" data-target="#paymentModal">Pay</button></a>
+                        <a href="#"><button type="submit" wire:click="checkout" class="btn btn-danger btn-block"
+                               >Pay</button></a>
                     </form>
                 </div>
             @endif
