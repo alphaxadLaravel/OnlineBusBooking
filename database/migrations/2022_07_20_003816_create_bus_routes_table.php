@@ -21,7 +21,7 @@ return new class extends Migration
             $table->string('region_from');
             $table->string('region_to');
             $table->string('depart_time');
-            $table->string('depart_time');
+            $table->string('arrival_time');
             $table->string('depart_area');
             $table->string('arrival_area');
             $table->string('status')->default('active');
