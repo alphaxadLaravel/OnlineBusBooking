@@ -4,7 +4,21 @@
 @section('admin')
     <div class="container-fluid">
         <h3 class="text-dark mb-4">New Bus Route</h3>
-
+        @if (Session::has('exist'))
+            <div class="alert alert-danger alert-dismissible" role="alert">
+                This Bus arleady Exist!!
+            </div>
+        @endif
+        @if (Session::has('region'))
+            <div class="alert alert-danger alert-dismissible" role="alert">
+                The To & From Regions cant be the Same!
+            </div>
+        @endif
+        @if (Session::has('date'))
+            <div class="alert alert-danger alert-dismissible" role="alert">
+                The Date Selected has Arleady Passed!
+            </div>
+        @endif
         <form action="/new_route" method="POST">
             @csrf
             <div class="row mb-3">
@@ -23,7 +37,7 @@
                                                 <select class="form-control" name="bus" id="">
                                                     <option value="">Select Bus Name..</option>
                                                     @foreach ($buses as $bus)
-                                                    <option value="{{$bus->id}}">{{$bus->bus}}</option>
+                                                        <option value="{{ $bus->id }}">{{ $bus->bus }}</option>
                                                     @endforeach
                                                 </select>
                                                 <small class="text-danger">
@@ -118,8 +132,9 @@
 
                                         <div class="col">
                                             <div class="form-group"><label for="username"><strong>Pickup
-                                                        Area</strong><br></label><input class="form-control" type="text"
-                                                    id="username" placeholder="Enter Pickup Area" name="pickup">
+                                                        Area</strong><br></label><input class="form-control"
+                                                    type="text" id="username" placeholder="Enter Pickup Area"
+                                                    name="pickup">
                                                 <small class="text-danger">
                                                     @error('pickup')
                                                         {{ $message }}
@@ -131,8 +146,9 @@
                                     <div class="form-row">
                                         <div class="col">
                                             <div class="form-group"><label for="username"><strong>Arrival
-                                                        Time</strong><br></label><input class="form-control" type="time"
-                                                    id="username" placeholder="Enter Travel date" name="time_arrival">
+                                                        Time</strong><br></label><input class="form-control"
+                                                    type="time" id="username" placeholder="Enter Travel date"
+                                                    name="time_arrival">
                                                 <small class="text-danger">
                                                     @error('time_arrival')
                                                         {{ $message }}

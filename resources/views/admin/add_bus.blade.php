@@ -4,7 +4,7 @@
 @section('admin')
     <div class="container-fluid">
         <h3 class="text-dark mb-4">Add new Bus</h3>
-
+        
         <form action="/new_bus" method="POST" enctype="multipart/form-data">
             @csrf
             <div class="row mb-3">
@@ -21,14 +21,14 @@
                                             <div class="form-group"><label for="username"><strong>Bus
                                                         Name</strong><br></label><input class="form-control" type="text"
                                                     id="username" placeholder="Enter Bus name" name="bus">
-                                                    <small class="text-danger">
-                                                        @error('bus')
-                                                            {{ $message }}
-                                                        @enderror
-                                                    </small>
-                                                </div>
+                                                <small class="text-danger">
+                                                    @error('bus')
+                                                        {{ $message }}
+                                                    @enderror
+                                                </small>
+                                            </div>
                                         </div>
-                                        
+
                                     </div>
                                 </div>
                             </div>
@@ -121,17 +121,17 @@
                                         <div class="col">
                                             <div class="form-group"><label for="email"><strong>Safety
                                                         Features</strong></label>
-                                                 <select class="form-control" name="safety" id="">
+                                                <select class="form-control" name="safety" id="">
                                                     <option value="">Select Safety Availability..</option>
                                                     <option value="Sanitizer">Sanitizer</option>
                                                     <option value="Mask">Mask</option>
                                                     <option value="Mask & Sanitizer">Mask & Sanitizer</option>
-                                                    </select>
-                                                    <small class="text-danger">
-                                                        @error('safety')
-                                                            {{ $message }}
-                                                        @enderror
-                                                    </small>
+                                                </select>
+                                                <small class="text-danger">
+                                                    @error('safety')
+                                                        {{ $message }}
+                                                    @enderror
+                                                </small>
                                             </div>
                                         </div>
 

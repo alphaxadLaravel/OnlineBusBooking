@@ -28,6 +28,9 @@
                         href="/bus_list"><i class="fas fa-bus"></i><span>Bus
                             lists</span></a></li>
 
+                <li class="nav-item"><a class="nav-link {{ request()->is('routes_available') ? 'active' : '' }}"
+                        href="/routes_available"><i class="fas fa-bus"></i><span>routes Available</span></a></li>
+
                 <li class="nav-item"><a class="nav-link {{ request()->is('agents_list') ? 'active' : '' }}"
                         href="/agents_list"><i class="fas fa-users"></i><span>Agents
                             lists</span></a></li>

@@ -133,3 +133,8 @@ Route::get('/select_seat/{id}',[SearchController::class,'selectSeat']);
 
 // user data for booking
 Route::post('/user_data/{id}',[BookingController::class,'userData']);
+
+// Bus routes here
+Route::get('/routes_available', function () {
+    return view('admin.bus_routes');
+});
