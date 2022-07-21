@@ -10,8 +10,13 @@ use App\Http\Controllers\MailController;
 use App\Http\Controllers\SearchController;
 use App\Models\Bus;
 
-// page ya kwanza ku load system ikifunguka
+// Route to home page here
 Route::get('/', function () {
+    return view('common.home');
+});
+
+// page ya kwanza ku load system ikifunguka
+Route::get('/splaash', function () {
     return view('outside.splash');
 });
 
@@ -20,10 +25,7 @@ Route::get('/landing', function () {
     return view('outside.landing');
 });
 
-// Route to home page here
-Route::get('/home', function () {
-    return view('common.home');
-});
+
 
 // list of all busses here
 Route::get('/bus_listing', function () {
@@ -86,7 +88,6 @@ Route::get('/transactions', function () {
     return view('admin.transactions');
 });
 
-
 // Invoices routes here
 Route::get('/invoices', function () {
     return view('admin.invoices');
@@ -144,16 +145,6 @@ Route::get('/companies', function () {
 });
 
 
-
-
-
-
-
-// List
-// Route::get('/list', function () {
-//     return view('common.bus_listing');
-// });
-
-// Route::get('/single', function () {
-//     return view('common.single_bus');
-// });
+Route::get('/demo', function () {
+    return view('outside.demo');
+});

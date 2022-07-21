@@ -6,10 +6,10 @@
         </a>
         <hr class="sidebar-divider my-0">
         <ul class="navbar-nav text-light" id="accordionSidebar">
-                @if (!session()->get('user')['role'])
+            @if (!session()->get('user')['role'])
                 <li class="nav-item"><a class="nav-link {{ request()->is('add_company') ? 'active' : '' }}"
                         href="/add_company"><i class="fas fa-plus"></i><span>Add Company</span></a></li>
-                @endif
+            @endif
             @if (session()->get('user')['role'] == 'admin')
                 <li class="nav-item"><a class="nav-link {{ request()->is('admin_dashboard') ? 'active' : '' }}"
                         href="/admin_dashboard"><i class="fas fa-tachometer-alt"></i><span>Dashboard</span></a></li>

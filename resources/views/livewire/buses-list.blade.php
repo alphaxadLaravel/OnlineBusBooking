@@ -19,7 +19,8 @@
                                 <option value="25">25</option>
                                 <option value="50">50</option>
                                 <option value="100">100</option>
-                            </select>&nbsp;</label></div>
+                            </select>&nbsp;</label>
+                    </div>
                 </div>
                 <div class="col-md-6">
                     <div class="text-md-right dataTables_filter" id="dataTable_filter"><label><input type="search"
@@ -41,7 +42,7 @@
                         </tr>
                     </thead>
                     <tbody>
-                        
+
                         @foreach ($buses_list as $bus)
                             <tr>
                                 <td><img class="rounded mr-2" width="30" height="30"
@@ -62,7 +63,7 @@
             <div class="row">
                 <div class="col-md-6">
                     <nav class="d-lg-flex justify-content-end dataTables_paginate paging_simple_numbers">
-                       {{$buses_list->links()}}
+                        {{ $buses_list->links() }}
                     </nav>
                 </div>
             </div>

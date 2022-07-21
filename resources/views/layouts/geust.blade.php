@@ -17,11 +17,11 @@
 
     <div id="wrapper">
 
-        @include('components.admin_sidebar')
+        @include('components.out_sidebar')
         <div class="d-flex flex-column" id="content-wrapper">
             <div id="content">
-                @include('components.admin_topnav')
-                @yield('admin')
+                @include('components.out_topnav')
+                @yield('geust')
             </div>
             @include('components.admin_footer')
         </div><a class="border rounded d-inline scroll-to-top" href="#page-top"><i class="fas fa-angle-up"></i></a>

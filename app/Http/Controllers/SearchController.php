@@ -10,7 +10,6 @@ class SearchController extends Controller
     //the search function is here
     public function searching()
     {
-
         request()->validate([
             'from' => 'required',
             'to' => 'required',
@@ -19,14 +18,26 @@ class SearchController extends Controller
 
         if (request('date') < now()) {
             session()->flash('dates');
-            return redirect('/home');
+            return redirect('/');
         } else {
 
-            $bus_list = BusRoute::where('region_from', request('from'))->where('region_to', request('to'))->where('travel_date', request('date'))->get();
-            request()->session()->put('searched', $bus_list);
-            $from = request('from');
-            $to = request('to');
-            return view('common.bus_listing',['bus_list'=>$bus_list,'from'=>$from,'to'=>$to]);
+            
+
+            $buses = BusRoute::where('region_from', request('from'))->get();
+            // $buses = BusRoute::where('region_from','=', request('from'))->where('region_to','=', request('to'))->where('travel_date','=', request('date'))->get();
+
+            if($buses){
+                request()->session()->put('searched', $buses);
+                request()->session()->put('date', request('date'));
+                request()->session()->put('from', request('from'));
+                request()->session()->put('to', request('to'));
+            
+                return view('common.single_bus',['buses', $buses]);
+            }else{
+                session()->flash('dates');
+                return redirect('/');
+            }
+          
         }
     }
 
