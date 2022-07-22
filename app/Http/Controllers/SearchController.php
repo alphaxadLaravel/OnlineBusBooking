@@ -21,9 +21,7 @@ class SearchController extends Controller
             return redirect('/');
         } else {
 
-            
-
-            $buses = BusRoute::where('region_from', request('from'))->get();
+            $buses = BusRoute::where('region_from', request('from'))->where('region_to','=', request('to'))->where('travel_date','=', request('date'))->get();
             // $buses = BusRoute::where('region_from','=', request('from'))->where('region_to','=', request('to'))->where('travel_date','=', request('date'))->get();
 
             if($buses){
@@ -32,9 +30,9 @@ class SearchController extends Controller
                 request()->session()->put('from', request('from'));
                 request()->session()->put('to', request('to'));
             
-                return view('common.single_bus',['buses', $buses]);
+                return view('common.bus_listing',['buses'=>$buses]);
             }else{
-                session()->flash('dates');
+                session()->flash('route');
                 return redirect('/');
             }
           
@@ -43,8 +41,9 @@ class SearchController extends Controller
 
     public function singleBus($id){
 
-        $single_bus = BusRoute::where('id','=', $id)->get();
-        return view('common.single_bus',['single_bus'=>$single_bus]);
+
+        $buses = BusRoute::where('id','=', $id)->first();
+        return view('common.single_bus',['buses'=>$buses]);
     }
 
     public function selectSeat($id){

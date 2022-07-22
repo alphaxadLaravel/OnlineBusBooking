@@ -43,8 +43,9 @@
                                                         class="form-check-label custom-control-label"
                                                         for="formCheck-1">Remember Me</label></div>
                                             </div>
-                                        </div><button class="btn btn-primary btn-block text-white btn" type="submit">Login</button>
+                                        </div><button class="btn btn-danger btn-block text-white btn" type="submit">Login</button>
                                         <hr>
+                                        <small class="text-center">Looking for a Bus ?<a href="/"> Search For A Bus Here!</a></small>
                                     </form>
                                 </div>
                             </div>

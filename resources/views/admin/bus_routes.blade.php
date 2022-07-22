@@ -5,7 +5,7 @@
     <div class="container-fluid">
         <h3 class="text-dark mb-4">All Routes</h3>
         @if (Session::has('routed'))
-            <div class="alert alert-danger alert-dismissible" role="alert">
+            <div class="alert alert-success alert-dismissible" role="alert">
                 New Route Added Successfully!
             </div>
         @endif

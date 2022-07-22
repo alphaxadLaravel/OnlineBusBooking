@@ -15,6 +15,11 @@
                             Date Selected has already Passed!
                         </div>
                     @endif
+                    @if (Session::has('route'))
+                    <div class="alert alert-danger alert-dismissible m-3" role="alert">
+                        Travel date or Route is not currently Availabe!
+                    </div>
+                @endif
                     <div class="card-body px-4">
                         <div class="form-row">
                             <h6 class="text-danger">Find Your Best Route Here</h6>

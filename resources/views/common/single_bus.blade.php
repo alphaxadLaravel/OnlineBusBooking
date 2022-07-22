@@ -1,7 +1,7 @@
 @extends('layouts.geust')
 @section('title', 'Bus Details - Online Bus Booking System')
 
-@section('admin')
+@section('geust')
 
     <div class="p-2 pt-0 px-3  w-100">
         <div class="card">
@@ -12,7 +12,7 @@
                         <p class="small mb-0"> {{session()->get('from')}}</p>
                     </div>
                     <div class="">
-                        <small class="text-muted mb-1 f-10 pr-1">DATE</small>
+                        <small class="text-muted mb-1 f-10 pr-1">TRAVEL DATE</small>
                         <p class="small mb-0"> {{session()->get('date')}}</p>
 
                     </div>
@@ -30,7 +30,7 @@
             <div class="card mb-3 ">
                 <div class="row g-0">
                     <div class="col-md-4">
-                        <img src="" class="w-100 rounded-left" style="height: 245px"
+                        <img src="{{asset($buses->bus->photo)}}" class="w-100 rounded-left" style="height: 245px"
                             alt="...">
                     </div>
 
@@ -39,49 +39,45 @@
                         <div class="card-body ">
                             <div class="row">
                                 <div class="col-md-12">
-                                    <h6 class="text-danger">sdfsafasdfasfsdf</h6>
+                                    <h6 class="text-danger">{{$buses->bus->bus}} - Tsh {{number_format($buses->price)}} /=</h6>
                                 </div>
                             </div>
                             <div class="row mb-3">
                                 <div class="col-md-4">
-                                    <small class="">GOING FROM</small>
-                                    <p class="small text-danger mb-0"> Dar-es-Salaam</p>
+                                    <small class="">WIFI</small>
+                                    <p class="small text-danger mb-0">{{$buses->bus->wifi}}</p>
                                 </div>
                                 <div class="col-md-4">
-                                    <small class="">GOING FROM</small>
-                                    <p class="small mb-0"> fdfds</p>
+                                    <small class="">ESSENTIALS</small>
+                                    <p class="small text-danger mb-0">{{$buses->bus->essentials}}</p>
                                 </div>
                                 <div class="col-md-4">
-                                    <small class="">GOING FROM</small>
-                                    <p class="small mb-0"> fdfds</p>
-                                </div>
-                            </div>
-                            <div class="row mb-3">
-                                <div class="col-md-4">
-                                    <small class="">GOING FROM</small>
-                                    <p class="small mb-0"> fdfds</p>
-                                </div>
-                                <div class="col-md-4">
-                                    <small class="">GOING FROM</small>
-                                    <p class="small mb-0"> fdfds</p>
-                                </div>
-                                <div class="col-md-4">
-                                    <small class="">GOING FROM</small>
-                                    <p class="small mb-0"> fdfds</p>
+                                    <small class="">SNACKS</small>
+                                    <p class="small text-danger mb-0">{{$buses->bus->snacks}}</p>
+                                    
                                 </div>
                             </div>
                             <div class="row mb-3">
                                 <div class="col-md-4">
-                                    <small class="">GOING FROM</small>
-                                    <p class="small mb-0"> fdfds</p>
+                                    <small class="">SAFETY</small>
+                                    <p class="small text-danger mb-0">{{$buses->bus->safety}}</p>
+                                    
                                 </div>
                                 <div class="col-md-4">
-                                    <small class="">GOING FROM</small>
-                                    <p class="small mb-0"> fdfds</p>
+                                    <small class="">AC</small>
+                                    <p class="small text-danger mb-0">{{$buses->bus->AC}}</p>
+                                    
                                 </div>
                                 <div class="col-md-4">
+                                    <small class="">FOOD</small>
+                                    <p class="small text-danger mb-0">{{$buses->bus->food}}</p>
+                                    
+                                </div>
+                            </div>
+                            <div class="row mb-3">
+                                <div class="col-md-12">
                                     <small class="">GOING FROM</small>
-                                    <p class="small mb-0"> fdfds</p>
+                                    <p class="small text-danger mb-0"> {{$buses->bus->about}}</p>
                                 </div>
                             </div>
 
@@ -93,5 +89,5 @@
         </div>
     </div>
 
-   @livewire('checkout')
+   @livewire('checkout',['buses'=>$buses])
 @endsection

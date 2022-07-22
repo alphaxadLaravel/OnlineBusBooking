@@ -10,7 +10,7 @@
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.12.0/css/all.css">
 </head>
 
-<body class="bg-gradient-primary">
+<body class="bg-gradient-danger">
 
     @yield('admins')
    

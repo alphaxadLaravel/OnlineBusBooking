@@ -2,22 +2,22 @@
 @section('title', 'All Buses - Online Bus Booking System')
 
 @section('admin')
-    <div class="p-2  w-100">
+    <div class="p-2 pt-0 px-3  w-100">
         <div class="card">
             <div class="card-body">
                 <div class="d-flex justify-content-between px-3">
                     <div class="">
                         <small class="text-muted mb-1 f-10 pr-1">GOING FROM</small>
-                        <p class="small mb-0"> fdfds</p>
+                        <p class="small mb-0"> {{ session()->get('from') }}</p>
                     </div>
                     <div class="">
-                        <small class="text-muted mb-1 f-10 pr-1">DATE</small>
-                        <p class="small mb-0"> 20/20/2022</p>
+                        <small class="text-muted mb-1 f-10 pr-1">TRAVEL DATE</small>
+                        <p class="small mb-0"> {{ session()->get('date') }}</p>
 
                     </div>
                     <div class="">
                         <small class="text-muted mb-1 f-10 pr-1">GOING TO</small>
-                        <p class="small mb-0"> dsfdsf</p>
+                        <p class="small mb-0"> {{ session()->get('to') }}</p>
                     </div>
                 </div>
             </div>
@@ -25,28 +25,35 @@
     </div>
 
     <div class="row mx-3 mt-3">
-        @for ($i = 0; $i < 4; $i++)
-        <div class="col-md-3 mb-3">
-            <div class="card">
-                <img class="card-img-top" src="{{asset('buses/1658287153.jpg')}}" alt="">
-                <div class="card-body">
-                    <h4 class="card-title text-danger">Abood express</h4>
-                    <div class="row">
-                        <div class="col-md-12 mb-2">
-                            <small class="text-bold">Rouete</small>
-                            <p class="card-text">Dar-es-Salaam <span class="text-danger">-</span> Tanga</p>
+        @foreach ($buses as $bus)
+            <div class="col-md-3 mb-3">
+                <a href="/single_bus/{{$bus->id}}" class="text-secondary">
+
+                    <div class="card">
+                        <img class="card-img-top" src="{{ asset($bus->bus->photo) }}" alt="">
+                        <div class="card-body">
+                            <h4 class="card-title text-danger">{{ $bus->bus->bus }}</h4>
+                            <div class="row">
+                                <div class="col-md-12 mb-2">
+                                    <small class="text-bold">Rouete</small>
+                                    <p class="card-text">{{ session()->get('from') }} <span class="text-danger">-</span>
+                                        {{ session()->get('to') }}</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="card-footer d-flex justify-content-center align-items-center p-1">
+                            <span><span class="text-">Price: Tsh</span><span class="text-danger">
+                                    {{ $bus->price }}</span></span>
+
                         </div>
                     </div>
-                </div>
-                <div class="card-footer d-flex justify-content-center align-items-center p-1">
-                    <span><span class="text-">Price: Tsh</span><span class="text-danger"> 30,000</span></span>
+                </a>
 
-                </div>
             </div>
-        </div>
-        @endfor
+        @endforeach
+
     </div>
-    
+
 
     {{-- <div class="container-fluid">
 
