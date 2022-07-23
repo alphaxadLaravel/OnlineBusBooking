@@ -2,6 +2,7 @@
 
 namespace App\Http\Livewire;
 
+use App\Models\Bank;
 use App\Models\Branch;
 use App\Models\Traveller;
 use App\Models\TravellerBoking;
@@ -33,7 +34,6 @@ class Checkout extends Component
     public function lipia()
     {
 
-
         $this->validate([
             'fullname' => 'required',
             'email' => 'required|unique:travellers',
@@ -42,49 +42,66 @@ class Checkout extends Component
         ]);
 
         $chek_money = Branch::where('phone', $this->number)->where('pin', $this->pin)->where('branch', $this->branch)->first();
-
         if ($chek_money) {
-            $total_cost = count($this->selected) * $this->bus->price ;
-            dd($total_cost);
+
+            $total_cost = count($this->selected) * $this->bus->price;
+
+            if ($chek_money->amount >= $total_cost) {
+
+                $new_traveller = Traveller::Create([
+                    'fullname' => $this->fullname,
+                    'email' => $this->email,
+                    'phone' => $this->phone,
+                    'status' => 'booked..',
+                ]);
+
+                // traveller_id 	bus_id 	seat 	price 	date 	ticket 	from 	to 	status
+                for ($i = 0; $i < count($this->selected); $i++) {
+
+                    $tiketi = Str::random(5);
+
+                    $booking = TravellerBoking::create([
+                        'seat' => $this->selected[$i],
+                        'status' => 'booked',
+                        'traveller_id' => $new_traveller->id,
+                        'bus_id' => $this->bus->bus_id,
+                        'price' => $this->bus->price,
+                        'date' => $this->bus->travel_date,
+                        'ticket' => 'TKT-' . $tiketi,
+                        'from' => $this->bus->region_from,
+                        'to' => $this->bus->region_to,
+                    ]);
+                }
+
+                // traveller_id 	traveller_booking_id 	payment_mean 	payment_number
+                TravellerTransaction::create([
+                    'traveller_id' => $new_traveller->id,
+                    'traveller_booking_id' => $booking->id,
+                    'payment_mean' => $this->branch,
+                    'payment_number' => $this->number,
+                ]);
+
+                $new_amount = $chek_money->amount - $total_cost;
+
+                Branch::where('phone', $this->number)->update([
+                    'amount'=>$new_amount
+                ]);
+
+                $bank = Bank::where('card', '10001000')->first();
+
+                $profit = $bank->amount + $total_cost;
+
+                Bank::where('card', '10001000')->update([
+                    'amount'=>$profit
+                ]);
+
+            } else {
+            }
+
+            return  redirect('/');
         } else {
             session()->flash('account');
         }
-
-        $new_traveller = Traveller::Create([
-            'fullname' => $this->fullname,
-            'email' => $this->email,
-            'phone' => $this->phone,
-            'status' => 'booked..',
-        ]);
-
-
-        // traveller_id 	bus_id 	seat 	price 	date 	ticket 	from 	to 	status
-        for ($i = 0; $i < count($this->selected); $i++) {
-
-            $tiketi = Str::random(5);
-
-            $booking = TravellerBoking::create([
-                'seat' => $this->selected[$i],
-                'status' => 'booked',
-                'traveller_id' => $new_traveller->id,
-                'bus_id' => $this->bus->bus_id,
-                'price' => $this->bus->price,
-                'date' => $this->bus->travel_date,
-                'ticket' => 'TKT-' . $tiketi,
-                'from' => $this->bus->region_from,
-                'to' => $this->bus->region_to,
-            ]);
-        }
-
-
-
-        // traveller_id 	traveller_booking_id 	payment_mean 	payment_number
-        TravellerTransaction::create([
-            'traveller_id' => $new_traveller->id,
-            'traveller_booking_id' => $booking->id,
-            'payment_mean' => $this->branch,
-            'payment_number' => $this->number,
-        ]);
     }
 
     public function mount($buses)

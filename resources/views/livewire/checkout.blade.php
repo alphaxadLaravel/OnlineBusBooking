@@ -235,7 +235,7 @@
                     </div>
                 @elseif($money)
                     @if (Session::has('account'))
-                        <div class="alert alert-danger alert-dismissible" role="alert">
+                        <div class="alert alert-danger alert-dismissible mx-4" role="alert">
                             This payment account is not available!
                         </div>
                     @endif

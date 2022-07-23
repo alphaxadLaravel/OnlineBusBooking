@@ -8,6 +8,7 @@ use Illuminate\Database\Eloquent\Model;
 class TravellerBoking extends Model
 {
     use HasFactory;
+    
     protected $table = "traveller_bokings";
 
     protected $fillable = [
@@ -20,6 +21,5 @@ class TravellerBoking extends Model
         'to',
         'ticket',
         'status',
-
     ];
 }

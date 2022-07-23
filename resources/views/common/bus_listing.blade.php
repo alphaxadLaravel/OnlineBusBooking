@@ -1,7 +1,7 @@
-@extends('layouts.admin')
+@extends('layouts.geust')
 @section('title', 'All Buses - Online Bus Booking System')
 
-@section('admin')
+@section('geust')
     <div class="p-2 pt-0 px-3  w-100">
         <div class="card">
             <div class="card-body">
@@ -27,8 +27,7 @@
     <div class="row mx-3 mt-3">
         @foreach ($buses as $bus)
             <div class="col-md-3 mb-3">
-                <a href="/single_bus/{{$bus->id}}" class="text-secondary">
-
+                <a href="/single_bus/{{ $bus->id }}" class="text-secondary">
                     <div class="card">
                         <img class="card-img-top" src="{{ asset($bus->bus->photo) }}" alt="">
                         <div class="card-body">
@@ -48,13 +47,10 @@
                         </div>
                     </div>
                 </a>
-
             </div>
         @endforeach
-
     </div>
 
-    
     {{-- <div class="container-fluid">
 
         <form action="/new_agent" method="POST">

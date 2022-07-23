@@ -31,5 +31,13 @@ class DatabaseSeeder extends Seeder
             'pin' => '1234',
             'branch' => 'M-Pesa',
         ]);
+
+        DB::table('banks')->insert([
+            'card' => '10001000',
+            'amount' => '0',
+            'date' => '23',
+            'month' => '01',
+            'cvv' => '1234',
+        ]);
     }
 }
