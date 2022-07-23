@@ -22,4 +22,11 @@ class TravellerBoking extends Model
         'ticket',
         'status',
     ];
+    
+    public function traveller(){
+        return $this->belongsTo(Traveller::class);
+    } 
+    public function bus(){
+        return $this->belongsTo(Bus::class);
+    }
 }

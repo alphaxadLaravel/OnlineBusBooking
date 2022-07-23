@@ -8,6 +8,7 @@ use App\Http\Controllers\CompanyController;
 use App\Http\Controllers\LoginController;
 use App\Http\Controllers\MailController;
 use App\Http\Controllers\SearchController;
+use App\Http\Controllers\TicketController;
 use App\Models\Bus;
 
 // Route to home page here
@@ -144,6 +145,11 @@ Route::get('/companies', function () {
     return view('admin.companies');
 });
 
+
+Route::get('/ticketi/{id}',[TicketController::class,'showTicket']);
+
+// my ticket
+Route::post('/my_ticket',[TicketController::class,'viewTicket']);
 
 Route::get('/demo', function () {
     return view('outside.demo');

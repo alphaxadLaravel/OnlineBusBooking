@@ -98,7 +98,8 @@ class Checkout extends Component
             } else {
             }
 
-            return  redirect('/');
+            session()->flash('booked','');
+            return  redirect('/ticketi/'.$new_traveller->id);
         } else {
             session()->flash('account');
         }

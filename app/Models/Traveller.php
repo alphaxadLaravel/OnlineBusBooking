@@ -16,4 +16,9 @@ class Traveller extends Model
         'phone',
         'status ',
     ];
+
+    public function traveller_boking(){
+        return $this->hasMany(TravellerBoking::class);
+    } 
+
 }

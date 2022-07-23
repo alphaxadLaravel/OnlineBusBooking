@@ -36,4 +36,8 @@ class Bus extends Model
         return $this->hasMany(Agent::class);
     } 
 
+    public function bus(){
+        return $this->hasMany(TravellerBoking::class);
+    }
+
 }
