@@ -22,6 +22,8 @@ return new class extends Migration
             $table->string('price');
             $table->string('date');
             $table->string('ticket');
+            $table->string('payment_mean');
+            $table->string('payment_number');
             $table->string('from');
             $table->string('to');
             $table->string('status')->default('active');

@@ -24,7 +24,6 @@
         @endif
 
 
-
         <div class="d-flex flex-column" id="content-wrapper">
             <div id="content">
                 @include('components.out_topnav')

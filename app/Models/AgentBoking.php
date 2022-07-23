@@ -21,8 +21,11 @@ class AgentBoking extends Model
         'from',
         'to',
         'status',
+        'payment_mean',
+        'payment_number',
     ];
 
+   
     public function agent(){
         return $this->belongsTo(Agent::class);
     } 
@@ -33,7 +36,4 @@ class AgentBoking extends Model
         return $this->belongsTo(Bus::class);
     } 
 
-    public function agent_transaction(){
-        return $this->hasMany(AgentTransaction::class);
-    } 
 }

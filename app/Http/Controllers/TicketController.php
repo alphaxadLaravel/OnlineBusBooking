@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\AgentBoking;
 use App\Models\Traveller;
 use App\Models\TravellerBoking;
 use Illuminate\Http\Request;
@@ -30,4 +31,13 @@ class TicketController extends Controller
         return view('common.my_ticket', ['traveller_ticket' => $traveller_ticket]);
 
     }
+
+    // agentBooking
+    public function agentTickect($id)
+    {
+        $agent_ticket = AgentBoking::where('agent_id', $id)->get();
+
+        return view('common.my_ticket', ['agent_ticket' => $agent_ticket]);
+    }
+
 }

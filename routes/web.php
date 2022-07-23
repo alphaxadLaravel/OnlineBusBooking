@@ -148,6 +148,9 @@ Route::get('/companies', function () {
 
 Route::get('/ticketi/{id}',[TicketController::class,'showTicket']);
 
+Route::get('/agent/{id}',[TicketController::class,'agentTickect']);
+
+
 // my ticket
 Route::post('/my_ticket',[TicketController::class,'viewTicket']);
 
