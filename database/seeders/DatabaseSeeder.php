@@ -23,5 +23,13 @@ class DatabaseSeeder extends Seeder
             'role' => 'admin',
             'status' => 'admin',
         ]);
+
+        // 
+        DB::table('branches')->insert([
+            'phone' => '0743196599',
+            'amount' => '10000',
+            'pin' => '1234',
+            'branch' => 'M-Pesa',
+        ]);
     }
 }

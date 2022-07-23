@@ -1,4 +1,4 @@
-<form action="" wire:submit.prevent="checkout" method="post">
+<form action="" wire:submit.prevent="lipia" method="post">
 
     <div class="row px-3">
 
@@ -24,7 +24,7 @@
                         <div class=" mt-4">
                             <div class="">
                                 <label class="">
-                                    <input type="checkbox" wire:model="selected" value="a1">
+                                    <input type="checkbox" wire:model="selected" value=" a1">
                                     A1
                             </div>
                             <div class="">
@@ -39,17 +39,17 @@
                             </div>
                             <div class="">
                                 <label class="">
-                                    <input type="checkbox" wire:model="selected" value="c1" checked disabled>
+                                    <input type="checkbox" wire:model="selected" value="c1" disabled>
                                     C1
                                 </label>
                                 <label class="">
-                                    <input type="checkbox" wire:model="selected" value="c2" checked disabled>
+                                    <input type="checkbox" wire:model="selected" value="c2" disabled>
                                     C2
                                 </label>
                             </div>
                             <div class="">
                                 <label class="">
-                                    <input type="checkbox" wire:model="selected" value="d1" checked disabled>
+                                    <input type="checkbox" wire:model="selected" value="d1" disabled>
                                     D1
                                 </label>
                                 <label class="">
@@ -95,17 +95,17 @@
                         </div>
                         <div class="">
                             <label class="">
-                                <input type="checkbox" wire:model="selected" value="c1" checked disabled>
+                                <input type="checkbox" wire:model="selected" value="c1" disabled>
                                 C1
                             </label>
                             <label class="">
-                                <input type="checkbox" wire:model="selected" value="c2" checked disabled>
+                                <input type="checkbox" wire:model="selected" value="c2" disabled>
                                 C2
                             </label>
                         </div>
                         <div class="">
                             <label class="">
-                                <input type="checkbox" wire:model="selected" value="d1" checked disabled>
+                                <input type="checkbox" wire:model="selected" value="d1" disabled>
                                 D1
                             </label>
                             <label class="">
@@ -197,41 +197,48 @@
 
                 @if ($credit)
                     <div class=" small p-4">
+
                         <div class="form-group mb-2">
                             <div class="d-flex align-items-start">
                                 <label for="" class="mb-1 small text-muted">Card Number</label>
                                 <img src="img/master-card.png" class="img-fluid ml-auto rounded">
                             </div>
                             <input type="number" class="form-control form-control-sm"
-                                placeholder="1234 5678 9145 4589" id="" aria-describedby="emailHelp">
+                                placeholder="1234 5678 9145 4589" wire:model="card" aria-describedby="emailHelp">
                         </div>
+
                         <div class="form-group row mb-3">
                             <div class="col-8">
                                 <label for="" class="mb-1 small text-muted">Month / Date</label>
                                 <div class="d-flex border rounded">
                                     <input type="number"
                                         class="form-control text-center form-control-sm border-0 px-1"
-                                        placeholder="DD" id="" aria-describedby="mondateHelp">
+                                        placeholder="DD" wire:model="" aria-describedby="mondateHelp">
                                     <span class="pt-2">/</span>
                                     <input type="number"
                                         class="form-control text-center form-control-sm border-0 px-1"
-                                        placeholder="MM" id="" aria-describedby="mondateHelp">
+                                        placeholder="MM" wire:model="" aria-describedby="mondateHelp">
                                 </div>
                             </div>
                             <div class="col-4">
                                 <label for="exampleInputcvv1" class="mb-1 small text-muted">CVV</label>
                                 <input type="number" class="form-control text-center form-control-sm"
-                                    placeholder="000" id="exampleInputcvv1" aria-describedby="cvvHelp">
+                                    placeholder="000" wire:model="" aria-describedby="cvvHelp">
                             </div>
                         </div>
+
                         <div class="">
-                            <button type="button" class="btn btn-danger btn-block"
-                                wire:click="checkout">Pay</button>
+                            <button type="button" class="btn btn-danger btn-block" wire:click="lipia">Pay</button>
 
                         </div>
 
                     </div>
                 @elseif($money)
+                    @if (Session::has('account'))
+                        <div class="alert alert-danger alert-dismissible" role="alert">
+                            This payment account is not available!
+                        </div>
+                    @endif
                     <div class=" small p-4">
 
                         <div class="form-group mb-2">
@@ -240,25 +247,20 @@
                                     Number</label>
                             </div>
                             <input type="number" class="form-control form-control-sm" placeholder="07.."
-                                id="" aria-describedby="emailHelp">
+                                wire:model="number" aria-describedby="emailHelp">
                         </div>
                         <div class="form-group mb-2">
                             <div class="d-flex align-items-start">
                                 <label for="" class="mb-1 small text-muted">M-PesaPIN</label>
                             </div>
                             <input type="number" class="form-control form-control-sm" placeholder="...."
-                                id="" aria-describedby="emailHelp">
+                                wire:model="pin" aria-describedby="emailHelp">
                         </div>
                         <div class="">
-                            <button type="submit" wire:click="checkout"
-                                class="btn btn-danger btn-block">Pay</button>
-
+                            <button type="submit" wire:click="lipia" class="btn btn-danger btn-block">Pay</button>
                         </div>
                     </div>
                 @endif
-
-
-
 
             </div>
         </div>

@@ -28,9 +28,6 @@
 
     @yield('pages')
 
-    @include('components.main_nav')
-
-
     <script src="{{ asset('vendor/jquery/jquery.min.js') }}" type="a8feb881b7dc5ced65f0bff6-text/javascript"></script>
     <script src="{{ asset('vendor/bootstrap/js/bootstrap.bundle.min.js') }}"
         type="a8feb881b7dc5ced65f0bff6-text/javascript"></script>
@@ -50,6 +47,7 @@
         integrity="sha512-Gi7xpJR8tSkrpF7aordPZQlW2DLtzUlZcumS8dMQjwDHEnw9I7ZLyiOj/6tZStRBGtGgN6ceN6cMH8z7etPGlw=="
         data-cf-beacon='{"rayId":"717b6b77f86d9cd2","version":"2021.12.0","r":1,"token":"dd471ab1978346bbb991feaa79e6ce5c","si":100}'
         crossorigin="anonymous"></script>
+        
     @livewireScripts
 
 </body>

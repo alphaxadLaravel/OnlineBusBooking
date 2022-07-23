@@ -54,7 +54,7 @@
 
     </div>
 
-
+    
     {{-- <div class="container-fluid">
 
         <form action="/new_agent" method="POST">
@@ -133,6 +133,5 @@
         </form>
 
     </div> --}}
-
 
 @endsection
