@@ -17,12 +17,14 @@
 
     <div id="wrapper">
 
-        @if (session()->get('user')['role'] == 'Agent')
-            @include('components.agent_sidebar')
-        @else
+        @if (!session()->get('user')['role'] == 'Agent')
             @include('components.out_sidebar')
+        @else
+            @include('components.agent_sidebar')
         @endif
-        
+
+
+
         <div class="d-flex flex-column" id="content-wrapper">
             <div id="content">
                 @include('components.out_topnav')

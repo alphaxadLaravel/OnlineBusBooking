@@ -29,4 +29,11 @@ class Agent extends Model
     public function user(){
         return $this->belongsTo(User::class);
     }
+
+    public function agent_transaction(){
+        return $this->hasMany(AgentTransaction::class);
+    } 
+    public function agent_booking(){
+        return $this->hasMany(AgentBoking::class);
+    } 
 }

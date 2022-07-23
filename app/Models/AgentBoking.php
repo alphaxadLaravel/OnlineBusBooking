@@ -22,4 +22,18 @@ class AgentBoking extends Model
         'to',
         'status',
     ];
+
+    public function agent(){
+        return $this->belongsTo(Agent::class);
+    } 
+    public function traveller(){
+        return $this->belongsTo(Traveller::class);
+    } 
+    public function bus(){
+        return $this->belongsTo(Bus::class);
+    } 
+
+    public function agent_transaction(){
+        return $this->hasMany(AgentTransaction::class);
+    } 
 }
