@@ -2,6 +2,8 @@
 
 namespace App\Http\Livewire;
 
+use App\Models\AgentBoking;
+use App\Models\AgentTransaction;
 use App\Models\Bank;
 use App\Models\Branch;
 use App\Models\Traveller;
@@ -33,6 +35,7 @@ class Checkout extends Component
 
     public function lipia()
     {
+       
 
         $this->validate([
             'fullname' => 'required',
@@ -42,6 +45,7 @@ class Checkout extends Component
         ]);
 
         $chek_money = Branch::where('phone', $this->number)->where('pin', $this->pin)->where('branch', $this->branch)->first();
+
         if ($chek_money) {
 
             $total_cost = count($this->selected) * $this->bus->price;
@@ -60,9 +64,12 @@ class Checkout extends Component
 
                     $tiketi = Str::random(5);
 
-                    $booking = TravellerBoking::create([
+                    $agent_id = session()->get('user')['id'];
+
+                    $booking = AgentBoking::create([
                         'seat' => $this->selected[$i],
                         'status' => 'booked',
+                        'agent_id' => 4,
                         'traveller_id' => $new_traveller->id,
                         'bus_id' => $this->bus->bus_id,
                         'price' => $this->bus->price,
@@ -71,20 +78,34 @@ class Checkout extends Component
                         'from' => $this->bus->region_from,
                         'to' => $this->bus->region_to,
                     ]);
+
+                   
                 }
 
-                // traveller_id 	traveller_booking_id 	payment_mean 	payment_number
-                TravellerTransaction::create([
-                    'traveller_id' => $new_traveller->id,
-                    'traveller_booking_id' => $booking->id,
-                    'payment_mean' => $this->branch,
-                    'payment_number' => $this->number,
-                ]);
+                if (session()->get('user')['role'] == 'Agent') {
+                    $agent_id = session()->get('user')['id'];
+
+                    AgentTransaction::create([
+                        'agent_id' => $agent_id,
+                        'traveller_id' => $new_traveller->id,
+                        'agent_boking_id' => $booking->id,
+                        'payment_mean' => $this->branch,
+                        'payment_number' => $this->number,
+                    ]);
+                } else {
+                    TravellerTransaction::create([
+                        'traveller_id' => $new_traveller->id,
+                        'traveller_booking_id' => $booking->id,
+                        'payment_mean' => $this->branch,
+                        'payment_number' => $this->number,
+                    ]);
+                }
+
 
                 $new_amount = $chek_money->amount - $total_cost;
 
                 Branch::where('phone', $this->number)->update([
-                    'amount'=>$new_amount
+                    'amount' => $new_amount
                 ]);
 
                 $bank = Bank::where('card', '10001000')->first();
@@ -92,14 +113,19 @@ class Checkout extends Component
                 $profit = $bank->amount + $total_cost;
 
                 Bank::where('card', '10001000')->update([
-                    'amount'=>$profit
+                    'amount' => $profit
                 ]);
-
             } else {
             }
 
-            session()->flash('booked','');
-            return  redirect('/ticketi/'.$new_traveller->id);
+            if (session()->get('user')['role'] == 'Agent') {
+
+                session()->flash('booked', '');
+                return  redirect('/');
+            } else {
+                session()->flash('booked', '');
+                return  redirect('/ticketi/' . $new_traveller->id);
+            }
         } else {
             session()->flash('account');
         }

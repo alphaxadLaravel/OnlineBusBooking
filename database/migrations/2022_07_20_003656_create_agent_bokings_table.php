@@ -25,7 +25,7 @@ return new class extends Migration
             $table->string('from');
             $table->string('to');
             $table->string('status')->default('active');
-            $table->foreign('agent_id')->references('id')->on('agents')->onDelete('cascade')->onUpdate('cascade');
+            $table->foreign('agent_id')->references('id')->on('agents')->onDelete('cascade');
             $table->foreign('traveller_id')->references('id')->on('travellers')->onDelete('cascade')->onUpdate('cascade');
             $table->foreign('bus_id')->references('id')->on('buses')->onDelete('cascade')->onUpdate('cascade');
             $table->timestamps();
